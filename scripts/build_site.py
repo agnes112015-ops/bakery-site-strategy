@@ -200,9 +200,9 @@ chart = {
 
 # ---- 히어로
 hero_line = (
-    f"{FIN['자치구']} {FIN['상권명']} 상권에 약 {area_m2}㎡ 베이커리 주도형 매장 "
-    f"‘{INT['concept'].split(' (')[0]}’을 연다. 기준 시나리오는 {first_profit[1]}년차 흑자 전환, "
-    f"출점 조건은 기준 Y1 매출의 {pct(BE['손익분기_대비_기준Y1매출'])} 이상 확보."
+    f"{FIN['자치구']} {FIN['상권명']} 상권에 약 90~110㎡ 베이커리 주도형 직영 매장 "
+    f"‘{INT['concept'].split(' (')[0]}’을 연다. 재보정 기준 Y1 매출 8.44억 원·영업이익률 1.3%(손익분기 8.24억 원), "
+    f"출점 조건은 임차료 연 0.94억 원·설비 4.5억 원 이하."
 )
 hero = f"""
 <header class="hero" id="top">
@@ -213,7 +213,7 @@ hero = f"""
     <dl class="brief">
       <div><dt>클라이언트</dt><dd>사모펀드(PE)가 보유한 커피·베이커리 전문점 브랜드</dd></div>
       <div><dt>과제</dt><dd>서울 1호 신규 출점지 선정(3년 뒤 성장 상권) · 인테리어 컨셉 · 메뉴 구성 · 3년 손익 시뮬레이션</dd></div>
-      <div><dt>결론</dt><dd>{e(FIN['상권명'])}({e(FIN['자치구'])} {e(FIN['행정동'])}) · {e(INT['concept'])} · 기준 3년 누적 영업이익 {eok(cum_base)} {A}</dd></div>
+      <div><dt>결론</dt><dd>{e(FIN['상권명'])}({e(FIN['자치구'])} {e(FIN['행정동'])}) · {e(INT['concept'])} · 재보정 기준 Y3 영업이익률 7.3% {A}</dd></div>
     </dl>
     <div class="site-card">
       <div>
@@ -1059,9 +1059,10 @@ JS = r"""
 
 import sys as _sys
 _sys.path.insert(0, str(Path(__file__).resolve().parent))
-from build_competition import competition_html, rent_html  # noqa: E402
+from build_competition import competition_html, rent_html, pnl_v2_html  # noqa: E402
 comp_html = competition_html()
 rent_html_s = rent_html()
+pnl_v2_s = pnl_v2_html()
 
 html = f"""<!doctype html>
 <html lang="ko">
@@ -1082,6 +1083,7 @@ html = f"""<!doctype html>
 {comp_html}
 {int_html}
 {menu_html}
+{pnl_v2_s}
 {pnl_html}
 {rent_html_s}
 {src_html}

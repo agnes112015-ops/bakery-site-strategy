@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-P = json.loads((ROOT / "data/interim/pnl.json").read_text(encoding="utf-8"))
-out = {"method": "월 임대료 상한 = (모델 임차료 + 영업이익 − 목표이익) / 12. 모델 임차료는 DART 스타벅스 매출 대비 점유비용 13.4% (rcpNo 20260406003256) 기준.",
+P = json.loads((ROOT / "data/interim/pnl_v2.json").read_text(encoding="utf-8"))
+out = {"method": "월 임대료 상한 = (모델 임차료 + 영업이익 − 목표이익) / 12. 모델 임차료는 재보정 손익(pnl_v2.json, 직영 베이커리 4사 중앙값 임차료율 11.1%) 기준.",
        "limitation": "남부터미널역 실제 상가 임대료는 연결된 공공데이터(서울 열린데이터광장)·DART에 없음 → 실제 매물 임대료를 이 상한과 비교해 출점 여부를 결정해야 함.",
        "rows": []}
 for s, v in P["scenarios"].items():
