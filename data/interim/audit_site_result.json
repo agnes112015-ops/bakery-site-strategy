@@ -1,0 +1,1819 @@
+{
+ "checked": 259,
+ "failed": 0,
+ "results": [
+  {
+   "group": "A",
+   "label": "서울 제과점 20232 분기매출",
+   "ok": true,
+   "expected": "1,919.0억원  (근처: 제과점 23Q2)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 제과점 20262 분기매출",
+   "ok": true,
+   "expected": "2,002.4억원  (근처: 26Q2)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 커피 20232→20262",
+   "ok": true,
+   "expected": "7,186.2억원 → 7,285.8억원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 제과점 3년 증감",
+   "ok": true,
+   "expected": "(+4.3%)  (근처: 제과점 23Q2)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 커피 3년 증감",
+   "ok": true,
+   "expected": "(+1.4%)  (근처: 커피-음료)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 제과+커피 시장 CAGR3",
+   "ok": true,
+   "expected": "+0.67%  (근처: 서울 전체 제과+커피 시장)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 시장 CAGR3(요약문)",
+   "ok": true,
+   "expected": "3년 CAGR 0.67%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 전체 상권 수(TbgisTrdarRelm)",
+   "ok": true,
+   "expected": "1,650개",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "분석 대상 상권 수(10억↑ & 베이커리 공표)",
+   "ok": true,
+   "expected": "176개 분석 대상",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "최종지 분기 합산매출 20262",
+   "ok": true,
+   "expected": "36.14억원  (근처: 분기 합산매출)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "최종지 합산 CAGR3",
+   "ok": true,
+   "expected": "+8.2%  (근처: 합산매출 3년 CAGR)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "같은 2분기 YoY 3구간",
+   "ok": true,
+   "expected": "0.7% → 7.1% → 17.5%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 매출 3년전→최신",
+   "ok": true,
+   "expected": "7.42 → 9.61억원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "20254 합산매출(리스크)",
+   "ok": true,
+   "expected": "20254(29.4억원)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 점포 3년전→최신",
+   "ok": true,
+   "expected": "베이커리 점포는 13곳 → 11곳",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "커피 점포 3년전→최신",
+   "ok": true,
+   "expected": "커피는 49 → 55곳",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 점포당 분기매출",
+   "ok": true,
+   "expected": "0.873억원  (근처: 베이커리 점포당 분기매출)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 점포당 매출 3년 변화율",
+   "ok": true,
+   "expected": "+53.1%  (근처: 176상권 중앙값)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "커피 폐업률 20262",
+   "ok": true,
+   "expected": "커피 폐업률 7%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "표본 4분기 평균 폐업률(점포 가중)",
+   "ok": true,
+   "expected": "2.7%  (근처: 표본 4분기 평균 폐업률)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "176상권 베이커리 점포당 분기매출 중앙값",
+   "ok": true,
+   "expected": "0.494억원  (근처: 176상권 중앙값)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "trdar_scores.csv 행 수 = 분석 대상 수",
+   "ok": true,
+   "expected": "176 vs 176",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 2030 비중",
+   "ok": true,
+   "expected": "34.4%  (근처: 2030)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 여성 비중(총매출 대비)",
+   "ok": true,
+   "expected": "38.8%  (근처: 2030 / 여성 / 주말)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 주말 비중",
+   "ok": true,
+   "expected": "주말 18.6%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 주중 비중",
+   "ok": true,
+   "expected": "주중 81.4%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 06~11시 비중",
+   "ok": true,
+   "expected": "23.9%  (근처: 06~11)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 11~14시 비중",
+   "ok": true,
+   "expected": "36.3%  (근처: 점심)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 21~24시 비중",
+   "ok": true,
+   "expected": "21~24시 매출 2.8%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "합산 객단가",
+   "ok": true,
+   "expected": "6,421원  (근처: 합산 객단가)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "제과점 객단가 20262",
+   "ok": true,
+   "expected": "9,309원  (근처: 베이커리)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "커피 객단가 20262",
+   "ok": true,
+   "expected": "5,773원  (근처: 커피 객단가)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "제과점 객단가 20232",
+   "ok": true,
+   "expected": "7,700원 →  (근처: 제과점)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 06~11 / 17~21",
+   "ok": true,
+   "expected": "06~11시 22.1%·17~21시 26.0%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "커피 11~14시",
+   "ok": true,
+   "expected": "11~14시에 39.4%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 주말 비중",
+   "ok": true,
+   "expected": "베이커리 주말 비중(21.3%)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "커피 주중 비중",
+   "ok": true,
+   "expected": "주중 82.4%  (근처: 분기 거래)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "상권 제과점 매출 비중",
+   "ok": true,
+   "expected": "26.6%  (근처: 제과점 매출 비중은)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 전체 제과점·커피 객단가",
+   "ok": true,
+   "expected": "서울 전체 제과점 10,914원·커피 7,902원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "176상권 객단가 중앙값",
+   "ok": true,
+   "expected": "176상권 중앙값 제과점 10,472원·커피 7,528원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "제안 객단가 조화평균",
+   "ok": true,
+   "expected": "= 7,194원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "베이커리 분기 거래건수",
+   "ok": true,
+   "expected": "103,198건",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "유동인구 3년 증감",
+   "ok": true,
+   "expected": "+10.1%  (근처: 유동인구 3년 증감)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "176상권 유동인구 증감 중앙값",
+   "ok": true,
+   "expected": "176상권 중앙값 -3.2%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "유동인구 06~11시 비중",
+   "ok": true,
+   "expected": "06~11시가 21.9%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "유동인구 21~06시 비중",
+   "ok": true,
+   "expected": "21~06시 27.8%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "유동인구 21~24시 비중",
+   "ok": true,
+   "expected": "유동인구 21~24시 9.9%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "유동인구 토·일 비중",
+   "ok": true,
+   "expected": "토·일 23.5%",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "직장인구/상주인구",
+   "ok": true,
+   "expected": "직장인구 21,560명이 상주인구 3,906명의 5.5배",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "직장인구 20~40대",
+   "ok": true,
+   "expected": "15,023명(69.7%)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "상주인구 값 동결 시작 분기 표기",
+   "ok": true,
+   "expected": "상주인구는 20234 이후",
+   "note": "원천에서 마지막으로 값이 바뀐 분기"
+  },
+  {
+   "group": "A",
+   "label": "직장인구 값 동결 시작 분기 표기",
+   "ok": true,
+   "expected": "직장인구는 20244 이후",
+   "note": "원천에서 마지막으로 값이 바뀐 분기"
+  },
+  {
+   "group": "A",
+   "label": "집객시설",
+   "ok": true,
+   "expected": "슈퍼마켓 0곳, 종합병원 2곳, 관공서 2곳, 은행 7곳, 집객시설 총 79곳",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "집객시설 기준분기 = 20262",
+   "ok": true,
+   "expected": "20262",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "상권변화지표·운영개월",
+   "ok": true,
+   "expected": "정체 · 153개월",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "서울 평균 운영개월",
+   "ok": true,
+   "expected": "153개월(서울 118개월)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "지하철 수집일 7일(평일5·주말2)",
+   "ok": true,
+   "expected": "5/2",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "지하철 평일·주말 평균",
+   "ok": true,
+   "expected": "평일 평균 68,191명/일, 주말 평균 48,930명/일(평일의 72%)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "2026Q2 평일 수(공휴일 미반영) = 페이지의 65일",
+   "ok": true,
+   "expected": "65",
+   "note": "공휴일은 데이터 없음 → 달력 평일 수"
+  },
+  {
+   "group": "A",
+   "label": "신규 매장 일 거래건수",
+   "ok": true,
+   "expected": "194.9건/일",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "평일 일 거래건수",
+   "ok": true,
+   "expected": "222.1건/일",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "평일 피크 시간당 거래",
+   "ok": true,
+   "expected": "26.9건/시간",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "좌석 계산값",
+   "ok": true,
+   "expected": "계산값 10.0석",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 분기 합산매출",
+   "ok": true,
+   "expected": "29.15억원  (근처: 분기 합산매출 26Q2)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 CAGR3",
+   "ok": true,
+   "expected": "4.8%  (근처: 합산 CAGR3)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 베이커리 매출",
+   "ok": true,
+   "expected": "2.73 → 2.90억원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 점포 수",
+   "ok": true,
+   "expected": "21→18 / 50→47",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 유동인구 증감",
+   "ok": true,
+   "expected": "+30.1%  (근처: 유동인구 3년 증감)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 분기 합산매출",
+   "ok": true,
+   "expected": "37.70억원  (근처: 분기 합산매출 26Q2)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 CAGR3",
+   "ok": true,
+   "expected": "12.0%  (근처: 합산 CAGR3)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 베이커리 매출",
+   "ok": true,
+   "expected": "6.70 → 9.91억원",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 점포 수",
+   "ok": true,
+   "expected": "9→10 / 60→58",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 유동인구 증감",
+   "ok": true,
+   "expected": "+1.3%  (근처: 유동인구 3년 증감)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 잠실 관광특구 베이커리 20232→20242",
+   "ok": true,
+   "expected": "9.13억 → 65.93억원 (근처: 잠실 관광특구)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 잠실역 베이커리 20232→20242",
+   "ok": true,
+   "expected": "8.01억 → 65.34억원 (근처: 잠실역)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 쌍문역동측상점가 베이커리 20252→20253",
+   "ok": true,
+   "expected": "13.33억 → 31.88억원 (근처: 쌍문역동측상점가)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 북촌(안국역) 베이커리 20242→20262",
+   "ok": true,
+   "expected": "43.24억 → 27.94억원 (근처: 북촌(안국역))",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 강남 마이스 관광특구 베이커리 20254→20262",
+   "ok": true,
+   "expected": "25.89억 → 12.93억원 (근처: 강남 마이스 관광특구)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "패널 제외 이화사거리 베이커리 20232→20262",
+   "ok": true,
+   "expected": "1.99억 → 1.96억원 (근처: 이화사거리)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "남부터미널역 v2 순위(점수)",
+   "ok": true,
+   "expected": "3위 (0.197)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "연희동 v2 순위(점수)",
+   "ok": true,
+   "expected": "2위 (0.209)",
+   "note": ""
+  },
+  {
+   "group": "A",
+   "label": "동대문역사문화공원역 v2 순위(점수)",
+   "ok": true,
+   "expected": "7위 (0.165)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 비용 항목 원문 존재(10개)",
+   "ok": true,
+   "expected": "모두 원문 행에 존재",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 항목합 = 비용합계",
+   "ok": true,
+   "expected": "3,064,939,905 vs 3,064,939,905",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 매출 − 비용합계 = 영업이익(천원 반올림 ±2)",
+   "ok": true,
+   "expected": "173,039,581 vs 173,039,581",
+   "note": "원 단위 공시를 천원으로 반올림한 차이만 허용"
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 영업이익 원문(원)↔JSON(천원)",
+   "ok": true,
+   "expected": "173,039,581천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 매출 원문 존재",
+   "ok": true,
+   "expected": "3,237,979,486천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 매출 억원 표시",
+   "ok": true,
+   "expected": "32,380억원  (근처: 에스씨케이컴퍼니)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 영업이익률",
+   "ok": true,
+   "expected": "5.3%  (근처: 에스씨케이컴퍼니)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 rcpNo 링크",
+   "ok": true,
+   "expected": "20260406003256",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "에스씨케이컴퍼니 DART 링크 href",
+   "ok": true,
+   "expected": "20260406003256",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 비용 항목 원문 존재(13개)",
+   "ok": true,
+   "expected": "모두 원문 행에 존재",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 항목합 = 비용합계",
+   "ok": true,
+   "expected": "546,112,293 vs 546,112,293",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 매출 − 비용합계 = 영업이익(천원 반올림 ±2)",
+   "ok": true,
+   "expected": "36,315,025 vs 36,315,026",
+   "note": "원 단위 공시를 천원으로 반올림한 차이만 허용"
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 영업이익 원문(원)↔JSON(천원)",
+   "ok": true,
+   "expected": "36,315,026천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 매출 원문 존재",
+   "ok": true,
+   "expected": "582,427,318천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 매출 억원 표시",
+   "ok": true,
+   "expected": "5,824억원  (근처: 투썸플레이스)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 영업이익률",
+   "ok": true,
+   "expected": "6.2%  (근처: 투썸플레이스)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 rcpNo 링크",
+   "ok": true,
+   "expected": "20260410001376",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸플레이스 DART 링크 href",
+   "ok": true,
+   "expected": "20260410001376",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 비용 항목 원문 존재(15개)",
+   "ok": true,
+   "expected": "모두 원문 행에 존재",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 항목합 = 비용합계",
+   "ok": true,
+   "expected": "764,582,376 vs 764,582,376",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 매출 − 비용합계 = 영업이익(천원 반올림 ±2)",
+   "ok": true,
+   "expected": "28,226,216 vs 28,226,218",
+   "note": "원 단위 공시를 천원으로 반올림한 차이만 허용"
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 영업이익 원문(원)↔JSON(천원)",
+   "ok": true,
+   "expected": "28,226,218천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 매출 원문 존재",
+   "ok": true,
+   "expected": "792,808,592천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 매출 억원 표시",
+   "ok": true,
+   "expected": "7,928억원  (근처: CJ푸드빌)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 영업이익률",
+   "ok": true,
+   "expected": "3.6%  (근처: CJ푸드빌)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 rcpNo 링크",
+   "ok": true,
+   "expected": "20260403002488",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 DART 링크 href",
+   "ok": true,
+   "expected": "20260403002488",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 비용 항목 원문 존재(2개)",
+   "ok": true,
+   "expected": "모두 원문 행에 존재",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 항목합 = 비용합계",
+   "ok": true,
+   "expected": "229,080,254 vs 229,080,254",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 매출 − 비용합계 = 영업이익(천원 반올림 ±2)",
+   "ok": true,
+   "expected": "9,621,241 vs 9,621,241",
+   "note": "원 단위 공시를 천원으로 반올림한 차이만 허용"
+  },
+  {
+   "group": "B",
+   "label": "이디야 영업이익 원문(원)↔JSON(천원)",
+   "ok": true,
+   "expected": "9,621,241천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 매출 원문 존재",
+   "ok": true,
+   "expected": "238,701,495천원",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 매출 억원 표시",
+   "ok": true,
+   "expected": "2,387억원  (근처: 이디야)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 영업이익률",
+   "ok": true,
+   "expected": "4.0%  (근처: 이디야)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 rcpNo 링크",
+   "ok": true,
+   "expected": "20260409000094",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 DART 링크 href",
+   "ok": true,
+   "expected": "20260409000094",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "스타벅스 원재료·상품 비율",
+   "ok": true,
+   "expected": "27.2%  (근처: 에스씨케이컴퍼니)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "스타벅스 인건비 비율",
+   "ok": true,
+   "expected": "30.76%  (근처: 인건비율)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "스타벅스 점유비용 비율",
+   "ok": true,
+   "expected": "13.44%  (근처: 임차료율)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "스타벅스 지급수수료 비율",
+   "ok": true,
+   "expected": "11.82%  (근처: 지급수수료율)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "투썸 원재료·상품 비율",
+   "ok": true,
+   "expected": "45.0%  (근처: 투썸플레이스)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "CJ푸드빌 원재료·상품 비율",
+   "ok": true,
+   "expected": "41.7%  (근처: CJ푸드빌)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "이디야 매출원가율",
+   "ok": true,
+   "expected": "매출원가 60.0%",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "지급수수료 치환값(투썸·CJ 중 낮은 값)",
+   "ok": true,
+   "expected": "지급수수료 10.0%로 치환",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "원재료비율 50:50 가중",
+   "ok": true,
+   "expected": "34.47%  (근처: 원재료비율)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "스타벅스 유형자산감가상각비/매출",
+   "ok": true,
+   "expected": "0.0388  (근처: 유형자산감가상각비/매출)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "무형자산상각비율",
+   "ok": true,
+   "expected": "0.70%  (근처: 무형자산상각비율)",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "로쏘 잔차비율",
+   "ok": true,
+   "expected": "로쏘 35.5%",
+   "note": ""
+  },
+  {
+   "group": "B",
+   "label": "엘비엠 잔차비율",
+   "ok": true,
+   "expected": "엘비엠 19.5%",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 연매출(제과점 점포당 최근 4분기)",
+   "ok": true,
+   "expected": "3.30억원  (근처: 점포당 연매출)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 매출 = 기준×배수×(1+g)^1",
+   "ok": true,
+   "expected": "273,986,529",
+   "note": "pnl 273,986,529"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "179,530,173",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 기타 = 내역 합",
+   "ok": true,
+   "expected": "71,563,561",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "-46,139,253",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 영업이익률",
+   "ok": true,
+   "expected": "-0.1684",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "-30,158,194",
+   "note": "pnl -30,158,194"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y1 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "2.74  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 매출 = 기준×배수×(1+g)^2",
+   "ok": true,
+   "expected": "284,672,004",
+   "note": "pnl 284,672,004"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "186,531,850",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 기타 = 내역 합",
+   "ok": true,
+   "expected": "72,909,155",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "-40,483,170",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 영업이익률",
+   "ok": true,
+   "expected": "-0.1422",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "-24,502,111",
+   "note": "pnl -24,502,111"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y2 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "2.85  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 매출 = 기준×배수×(1+g)^3",
+   "ok": true,
+   "expected": "295,774,212",
+   "note": "pnl 295,774,212"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "193,806,592",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 기타 = 내역 합",
+   "ok": true,
+   "expected": "74,307,226",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "-34,606,500",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 영업이익률",
+   "ok": true,
+   "expected": "-0.1170",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "-18,625,440",
+   "note": "pnl -18,625,440"
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 Y3 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "2.96  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 3년 누적 영업이익 = Y1+Y2+Y3",
+   "ok": true,
+   "expected": "-121,228,923",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 3년 누적 영업이익 표시",
+   "ok": true,
+   "expected": "-1.21억원  (근처: 3년 누적 영업이익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 매출 = 기준×배수×(1+g)^1",
+   "ok": true,
+   "expected": "348,614,236",
+   "note": "pnl 348,614,236"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "228,430,114",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 기타 = 내역 합",
+   "ok": true,
+   "expected": "80,961,230",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "-6,636,981",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 영업이익률",
+   "ok": true,
+   "expected": "-0.0190",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "9,344,078",
+   "note": "pnl 9,344,078"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y1 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "3.49  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 매출 = 기준×배수×(1+g)^2",
+   "ok": true,
+   "expected": "368,694,416",
+   "note": "pnl 368,694,416"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "241,587,689",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 기타 = 내역 합",
+   "ok": true,
+   "expected": "83,489,874",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "3,991,950",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 영업이익률",
+   "ok": true,
+   "expected": "0.0108",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "19,973,009",
+   "note": "pnl 19,973,009"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y2 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "3.69  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 매출 = 기준×배수×(1+g)^3",
+   "ok": true,
+   "expected": "389,931,215",
+   "note": "pnl 389,931,215"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "255,503,139",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 기타 = 내역 합",
+   "ok": true,
+   "expected": "86,164,168",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "15,233,107",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 영업이익률",
+   "ok": true,
+   "expected": "0.0391",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "31,214,166",
+   "note": "pnl 31,214,166"
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 Y3 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "3.90  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 3년 누적 영업이익 = Y1+Y2+Y3",
+   "ok": true,
+   "expected": "12,588,075",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 3년 누적 영업이익 표시",
+   "ok": true,
+   "expected": "0.13억원  (근처: 3년 누적 영업이익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 매출 = 기준×배수×(1+g)^1",
+   "ok": true,
+   "expected": "463,654,297",
+   "note": "pnl 463,654,297"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "303,810,324",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 기타 = 내역 합",
+   "ok": true,
+   "expected": "95,447,920",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "54,256,539",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 영업이익률",
+   "ok": true,
+   "expected": "0.1170",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "70,237,598",
+   "note": "pnl 70,237,598"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y1 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "4.64  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 매출 = 기준×배수×(1+g)^2",
+   "ok": true,
+   "expected": "501,673,949",
+   "note": "pnl 501,673,949"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "328,722,770",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 기타 = 내역 합",
+   "ok": true,
+   "expected": "100,235,634",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "74,381,272",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 영업이익률",
+   "ok": true,
+   "expected": "0.1483",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "90,362,331",
+   "note": "pnl 90,362,331"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y2 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "5.02  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 매출 = 기준×배수×(1+g)^3",
+   "ok": true,
+   "expected": "542,811,213",
+   "note": "pnl 542,811,213"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 매출총이익 = 매출 − 원재료비",
+   "ok": true,
+   "expected": "355,678,037",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 기타 = 내역 합",
+   "ok": true,
+   "expected": "105,415,940",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 영업이익 = 총이익 − 인건비 − 임차료 − 기타",
+   "ok": true,
+   "expected": "96,156,232",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 영업이익률",
+   "ok": true,
+   "expected": "0.1771",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 EBITDA = 영업이익 + 감가상각비 + 무형자산상각비",
+   "ok": true,
+   "expected": "112,137,292",
+   "note": "pnl 112,137,292"
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 월평균 = 연/12",
+   "ok": true,
+   "expected": "연/12",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 Y3 매출(억원) 표 표시",
+   "ok": true,
+   "expected": "5.43  (근처: 3개 시나리오 손익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 3년 누적 영업이익 = Y1+Y2+Y3",
+   "ok": true,
+   "expected": "224,794,043",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 3년 누적 영업이익 표시",
+   "ok": true,
+   "expected": "2.25억원  (근처: 3년 누적 영업이익)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "손익분기 고정비 = 기준 Y1 고정비 항목 합",
+   "ok": true,
+   "expected": "191,167,030",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "변동비율 = (원재료+지급수수료+소모품)/매출",
+   "ok": true,
+   "expected": "0.4707",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "손익분기 연매출 = 고정비/(1−변동비율)",
+   "ok": true,
+   "expected": "361,152,824",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "손익분기 연매출 표시",
+   "ok": true,
+   "expected": "3.61억원  (근처: 손익분기)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "손익분기/기준 Y1",
+   "ok": true,
+   "expected": "103.6%  (근처: 기준 Y1 매출의)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "손익분기/점포당 연매출",
+   "ok": true,
+   "expected": "109.6%  (근처: 점포당 연매출의)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "고정비·변동비율·공헌이익률",
+   "ok": true,
+   "expected": "연 고정비 1.91억원 · 변동비율 47.1% · 공헌이익률 52.9%",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 보수 Y1",
+   "ok": true,
+   "expected": "False",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 보수 Y2",
+   "ok": true,
+   "expected": "False",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 보수 Y3",
+   "ok": true,
+   "expected": "False",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 기준 Y1",
+   "ok": true,
+   "expected": "False",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 기준 Y2",
+   "ok": true,
+   "expected": "True",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 기준 Y3",
+   "ok": true,
+   "expected": "True",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 낙관 Y1",
+   "ok": true,
+   "expected": "True",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 낙관 Y2",
+   "ok": true,
+   "expected": "True",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "도달 여부 낙관 Y3",
+   "ok": true,
+   "expected": "True",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 흑자 전환 연차",
+   "ok": true,
+   "expected": "기준 시나리오는 2년차 흑자 전환",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "Y1 매출×원재료비 그리드 재계산(9칸)",
+   "ok": true,
+   "expected": "고정비 고정·변동비율 가감",
+   "note": "[]"
+  },
+  {
+   "group": "C",
+   "label": "지급수수료 치환 Y1 영업이익률",
+   "ok": true,
+   "expected": "-0.04%",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "음수 0 표기(−0.0%) 없음",
+   "ok": true,
+   "expected": "−0.0% 미표시",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "메뉴 믹스 가중 원재료율",
+   "ok": true,
+   "expected": "= 32.1%",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "메뉴목표 vs 손익 원재료율 차이",
+   "ok": true,
+   "expected": "차이 2.3%p",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "본 모델 비용률(기준 Y1)",
+   "ok": true,
+   "expected": "101.9%  (근처: 본 모델 비용률)",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "보수 시나리오 매출합 정합(표 Y1~Y3)",
+   "ok": true,
+   "expected": "3개 연도 표시",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "기준 시나리오 매출합 정합(표 Y1~Y3)",
+   "ok": true,
+   "expected": "3개 연도 표시",
+   "note": ""
+  },
+  {
+   "group": "C",
+   "label": "낙관 시나리오 매출합 정합(표 Y1~Y3)",
+   "ok": true,
+   "expected": "3개 연도 표시",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "베이커리 여성 비중이 한 가지 분모로만 표시",
+   "ok": true,
+   "expected": "총매출 대비 48.5% 만",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "합산 여성 비중 분모 = 총매출(176 중앙값과 동일 정의)",
+   "ok": true,
+   "expected": "38.8%",
+   "note": "location.json final_profile 합산 여성 38.8% (남+여 대비 48.3%)"
+  },
+  {
+   "group": "D",
+   "label": "베이커리 40대 이상 비중 분모 = 총매출(같은 문장의 60대 이상과 동일)",
+   "ok": true,
+   "expected": "40대 이상 51.6%",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "커피 30~40대 비중 분모 = 총매출",
+   "ok": true,
+   "expected": "30~40대 41.4%",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "커피 남성 비중(총매출 대비)",
+   "ok": true,
+   "expected": "남성 44.8%",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "성별·연령 미상 매출 주석 표시",
+   "ok": true,
+   "expected": "성별·연령 미상(법인 등) 매출 때문에 합이 100%가 아님을 명시",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "반대의견 대응이 실제 손익 기준 시나리오와 일치",
+   "ok": true,
+   "expected": "손익 '기준'은 CAGR×0.7(5.76%)이므로 '보수를 기본으로 쓴다'는 문구는 불일치",
+   "note": ""
+  },
+  {
+   "group": "D",
+   "label": "보수 전망식에 25% 상한 표기",
+   "ok": true,
+   "expected": "min(…,25%) 표기",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "수치가 있는 카드마다 출처 블록",
+   "ok": true,
+   "expected": "누락 0건",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "페이지의 DART 접수번호가 모두 원문 보유분",
+   "ok": true,
+   "expected": "['20260326000290', '20260403002488', '20260406003256', '20260409000094', '20260410000434', '20260410001376']",
+   "note": "초과: []"
+  },
+  {
+   "group": "E",
+   "label": "본문 외부 링크(<a>)는 DART만",
+   "ok": true,
+   "expected": "dart.fss.or.kr",
+   "note": "['https://dart.fss.or.kr']"
+  },
+  {
+   "group": "E",
+   "label": "외부 스크립트는 차트 라이브러리 CDN만(데이터 미포함)",
+   "ok": true,
+   "expected": "CDN",
+   "note": "['https://cdnjs.cloudflare.com']"
+  },
+  {
+   "group": "E",
+   "label": "웹·기사·블로그 출처 문구 없음",
+   "ok": true,
+   "expected": "없음",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "이디야 60.0%를 '성격별 비용'으로 표기하지 않음",
+   "ok": true,
+   "expected": "이디야는 성격별 분류 미공시 → 매출원가율",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'3년 후 분기 합산매출'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'<b>제안 객단가'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'시나리오별 연매출'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'<h3>손익분기'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'목표 원재료비율'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'존 구성'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'메뉴판'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'3개 시나리오 손익'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  },
+  {
+   "group": "E",
+   "label": "'<h3>민감도'에 가정 배지",
+   "ok": true,
+   "expected": "가정 배지",
+   "note": ""
+  }
+ ]
+}

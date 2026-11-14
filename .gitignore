@@ -1,0 +1,9 @@
+# 원천 데이터는 수집 스크립트로 재현 (용량·재배포 고려)
+data/raw/
+__pycache__/
+*.pyc
+.env
+scripts/tmp_*.py
+video/slides/*.png
+video/audio/
+video/segments/

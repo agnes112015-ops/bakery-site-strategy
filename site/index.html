@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>남부터미널역 출점 전략</title>
+<meta name="description" content="PE 보유 커피·베이커리 전문점의 서울 신규 출점 전략: 입지 선정, 인테리어 컨셉, 메뉴 구성, 3년 손익 시뮬레이션 (서울 열린데이터광장·DART 공시 기반)">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --p900:#2E1065;--p800:#4C1D95;--p700:#6D28D9;--p600:#7C3AED;--p300:#C4B5FD;--p100:#EDE9FE;--p50:#F5F3FF;
+  --ink:#1E1B2E;--ink2:#4B4763;--muted:#6B6880;--line:#E6E3EF;--bg:#F7F6FB;--card:#FFFFFF;
+  --pos:#166534;--posbg:#DCFCE7;--neg:#B91C1C;--negbg:#FEE2E2;--amber:#92400E;--amberbg:#FEF3C7;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.6;font-size:16px;word-break:keep-all;overflow-wrap:anywhere}
+a{color:var(--p700)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+@media(min-width:768px){.wrap{padding:0 32px}}
+h1,h2,h3,h4{line-height:1.3;margin:0}
+h2{font-size:clamp(1.5rem,3.2vw,2.1rem);letter-spacing:-.02em;margin-bottom:28px;font-weight:800}
+h3{font-size:1.1rem;font-weight:700;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+h3 small,h4 small{font-weight:500;color:var(--muted);font-size:.8rem}
+h4{font-size:.95rem;margin:4px 0 10px;color:var(--ink2)}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:16px;height:52px}
+.brand{font-weight:800;color:var(--p800);text-decoration:none;white-space:nowrap}
+.nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;min-width:0}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{white-space:nowrap;text-decoration:none;color:var(--ink2);font-size:.88rem;padding:6px 10px;border-radius:999px}
+.nav-links a:hover{background:var(--p100);color:var(--p800)}
+.hero{background:linear-gradient(135deg,#2E1065 0%,#4C1D95 45%,#7C3AED 100%);color:#fff;padding:64px 0 48px}
+.eyebrow{font-size:.85rem;letter-spacing:.04em;opacity:.85;margin:0 0 14px}
+.hero h1{font-size:clamp(1.9rem,5vw,3.2rem);font-weight:800;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:#DDD6FE}
+.lead{font-size:1.08rem;max-width:820px;margin:18px 0 0;opacity:.95}
+.lead.dark{color:var(--ink2);opacity:1;margin:-12px 0 24px}
+.brief{display:grid;gap:10px;margin:28px 0;max-width:900px}
+.brief div{display:grid;grid-template-columns:88px 1fr;gap:12px}
+.brief dt{font-weight:700;opacity:.75}.brief dd{margin:0}
+.site-card{background:#fff;color:var(--ink);border-radius:20px;padding:24px;display:grid;gap:20px;box-shadow:0 20px 50px rgba(20,0,60,.35)}
+@media(min-width:860px){.site-card{grid-template-columns:1fr 2fr;align-items:center}}
+.site-card .k{margin:0;font-size:.8rem;color:var(--p700);font-weight:700}
+.site-name{margin:2px 0;font-size:1.9rem;font-weight:800;color:var(--p800)}
+.site-meta{margin:0;color:var(--muted);font-size:.9rem}
+.site-facts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+@media(min-width:600px){.site-facts{grid-template-columns:repeat(3,1fr)}}
+.site-facts li{background:var(--p50);border-radius:14px;padding:14px}
+.site-facts b{display:block;font-size:1.15rem;color:var(--p800)}
+.site-facts span{font-size:.82rem;color:var(--ink2)}
+.hero .src{color:#E9E3FF}.hero .src span{background:rgba(255,255,255,.18);color:#fff}
+.sec{padding:72px 0}.sec.alt{background:#fff}
+.sec.alt .card{background:var(--bg)}
+.sec-no{color:var(--p700);font-weight:800;font-size:.85rem;letter-spacing:.06em;margin:0 0 8px;text-transform:uppercase}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:20px;min-width:0}
+.card.accent{border:2px solid var(--p300);background:linear-gradient(180deg,#fff, var(--p50))}
+.sec.alt .card.accent{background:linear-gradient(180deg,#fff, var(--p50))}
+.grid-2{display:grid;gap:20px}
+.grid-2>.card{margin-bottom:0}
+.grid-2+.card,.grid-2+.grid-2,.grid-2+details{margin-top:20px}
+@media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}}
+.kpis{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:600px){.kpis{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;border-top:4px solid var(--p600)}
+.kpi-v{font-size:2rem;font-weight:800;color:var(--p800);margin:6px 0 2px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.kpi-l{font-weight:700;margin:0}.kpi-s{color:var(--ink2);font-size:.88rem;margin:4px 0 0;flex:1}
+.takeaways{margin:28px 0 0;padding-left:1.3em;display:grid;gap:10px;max-width:900px}
+.legend-note{font-size:.85rem;color:var(--muted);margin-top:20px}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;line-height:1;padding:4px 7px;border-radius:999px;vertical-align:middle;white-space:nowrap}
+.tag-a{background:var(--amberbg);color:var(--amber);border:1px solid #FCD34D}
+.tag-r{background:var(--p100);color:var(--p800);border:1px solid var(--p300)}
+.src{font-size:.75rem;color:var(--muted);margin:14px 0 0;line-height:1.5}
+.src span{display:inline-block;background:var(--p100);color:var(--p800);font-weight:700;border-radius:4px;padding:0 6px;margin-right:4px}
+.note{font-size:.85rem;color:var(--ink2);margin:10px 0 0}
+.muted{color:var(--ink2);margin:0 0 12px}
+.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.8rem;background:var(--p50);border-radius:10px;padding:10px 12px;color:var(--ink2);margin:10px 0}
+.list{margin:0;padding-left:1.2em;display:grid;gap:8px}.list.small{font-size:.9rem;gap:6px}
+.list.risk li::marker{color:var(--neg)}
+.steps{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(5,1fr)}}
+.steps li{background:var(--p50);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:2px}
+.steps b{font-size:1.2rem;color:var(--p800)}.st-t{font-weight:700;font-size:.9rem}.st-d{font-size:.78rem;color:var(--ink2)}
+.weights{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.weights li{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) 44px;gap:8px;align-items:center;font-size:.82rem}
+.w-bar{height:10px;background:var(--p50);border-radius:6px;overflow:hidden}
+.w-bar i{display:block;height:100%;border-radius:6px}.w-bar i.pos{background:var(--p600)}.w-bar i.neg{background:#94A3B8}
+.w-val{text-align:right;font-variant-numeric:tabular-nums}
+.chart{position:relative;width:100%}
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:12px}
+table{border-collapse:collapse;width:100%;font-size:.86rem}
+th,td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+thead th{background:var(--p50);color:var(--p800);font-weight:700;font-size:.8rem}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.neg{color:var(--neg)}
+table.cmp th[scope=row]{width:26%;font-weight:600;color:var(--ink2)}
+table.cmp thead th small{display:block;font-weight:500;color:var(--muted)}
+table.cmp thead th.pick{background:var(--p700);color:#fff}table.cmp thead th.pick small{color:#E9E3FF}
+table.cmp td:nth-child(2){background:var(--p50);font-weight:600}
+table.cmp,table.pnl{min-width:640px}
+table.pnl{min-width:760px}
+table.pnl thead th{text-align:center}
+table.pnl tr.hl th,table.pnl tr.hl td,table.plain tr.hl th,table.plain tr.hl td{background:var(--p50);font-weight:700}
+table.plain th small{display:block;font-weight:400;color:var(--muted)}
+.table-wrap table.plain{min-width:680px}
+table.plain th[scope=row]{min-width:120px}
+table.grid{width:auto;margin:6px 0 14px}
+table.grid td{text-align:center;font-weight:700;font-variant-numeric:tabular-nums;min-width:72px}
+table.grid td.pos{background:var(--posbg);color:var(--pos)}table.grid td.neg{background:var(--negbg);color:var(--neg)}
+table.grid td.base{outline:2px solid var(--p700);outline-offset:-2px}
+table.grid.small td{min-width:56px}
+.big{font-size:2rem;font-weight:800;color:var(--p800);margin:0 0 8px}.big small{font-size:.9rem;color:var(--ink2);font-weight:500}
+.fold summary{cursor:pointer;font-weight:700;list-style:none;display:flex;justify-content:space-between;gap:12px}
+.fold summary::after{content:"+";color:var(--p700);font-size:1.3rem;line-height:1}
+.fold[open] summary::after{content:"−"}
+.fold summary::-webkit-details-marker{display:none}
+.qa{border-top:1px solid var(--line);padding:12px 0}.qa-q{font-weight:700;margin:0 0 4px}.qa-q::before{content:"Q. ";color:var(--p700)}
+.qa-a{margin:0;color:var(--ink2);font-size:.92rem}.qa-a::before{content:"A. ";font-weight:700;color:var(--p700)}
+.persona h3{color:var(--p800)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chips span{background:var(--p100);color:var(--p800);font-size:.8rem;border-radius:999px;padding:4px 10px}
+.evid{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.evid li{display:flex;flex-direction:column;border-left:3px solid var(--p300);padding-left:10px}
+.evid b{font-size:.9rem}.evid span{font-size:.8rem;color:var(--muted)}
+.zone-bar{display:flex;height:36px;border-radius:10px;overflow:hidden;margin:4px 0 18px;gap:2px}
+.zone-bar i{display:block;min-width:4px}
+.zones,.mixlist{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.zones li{display:grid;grid-template-columns:14px 1fr;gap:12px}
+.sw{width:14px;height:14px;border-radius:4px;margin-top:5px;display:inline-block;flex:none}
+.z-t{margin:0;font-weight:700}.z-t b{color:var(--p700);font-weight:700;margin-left:4px}
+.z-d{margin:4px 0;font-size:.9rem;color:var(--ink2)}.z-e{margin:0;font-size:.75rem;color:var(--muted)}
+.mixlist li{display:grid;grid-template-columns:14px 1fr;column-gap:10px;font-size:.88rem}
+.mixlist li span:last-child{grid-column:2;color:var(--ink2);font-size:.8rem}
+.timeline{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+@media(min-width:900px){.timeline{grid-template-columns:repeat(3,1fr)}}
+.timeline li{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;border-top:3px solid var(--p600)}
+.tl-t{font-weight:800;margin:0;color:var(--p800)}.tl-b{font-size:.8rem;margin:4px 0;color:var(--ink2)}.tl-s{font-size:.88rem;margin:0}
+.palette,.materials{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.palette li{display:grid;grid-template-columns:40px auto 1fr;column-gap:10px;align-items:center;font-size:.88rem}
+.palette li span:last-child{grid-column:2/4;color:var(--ink2);font-size:.8rem}
+.palette code{font-size:.78rem;color:var(--muted)}
+.chip-c{width:40px;height:40px;border-radius:10px;grid-row:span 2;border:1px solid var(--line)}
+.materials li{display:flex;flex-direction:column;border-left:3px solid var(--p300);padding-left:10px}
+.materials span{font-size:.85rem;color:var(--ink2)}
+.menu-grid{display:grid;gap:18px}
+@media(min-width:700px){.menu-grid{grid-template-columns:repeat(3,1fr)}}
+.menu-col h4{border-bottom:2px solid var(--p600);padding-bottom:6px;color:var(--p800)}
+.menu-col ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.menu-col li{display:flex;justify-content:space-between;gap:10px;font-size:.88rem}
+.menu-col li small{display:block;color:var(--muted);font-size:.75rem}
+.menu-col em{font-style:normal;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.srclist{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:.86rem}
+.srclist li{display:flex;flex-direction:column;border-left:3px solid var(--p300);padding-left:10px}
+.srclist li span{font-size:.78rem;color:var(--muted)}
+.lim h4{color:var(--p800)}
+.video-frame{position:relative;aspect-ratio:16/9;background:linear-gradient(135deg,#2E1065,#7C3AED);border-radius:20px;overflow:hidden}
+.video-frame video{width:100%;height:100%;display:block;background:transparent}
+.video-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;pointer-events:none;gap:10px}
+.video-ph p{margin:0;font-weight:700}
+.play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);position:relative}
+.play::after{content:"";position:absolute;left:26px;top:20px;border-left:18px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
+footer{padding:28px 0;color:var(--muted);font-size:.8rem;border-top:1px solid var(--line)}
+@media print{.nav{display:none}.fold{display:block}}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="섹션">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top">출점 전략</a>
+    <div class="nav-links">
+      <a href="#summary">요약</a><a href="#location">01 입지</a><a href="#interior">02 인테리어</a>
+      <a href="#menu">03 메뉴</a><a href="#pnl">04 손익</a><a href="#sources">출처</a><a href="#video">영상</a>
+    </div>
+  </div>
+</nav>
+
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <p class="eyebrow">PE 포트폴리오 · 커피·베이커리 전문점 서울 신규 출점 전략</p>
+    <h1>3년 뒤 더 커질 상권,<br><em>남부터미널역</em>에 굽는 매장을 연다</h1>
+    <p class="lead">서초구 남부터미널역 상권에 약 55㎡ 베이커리 주도형 매장 ‘플랫폼 베이크하우스’을 연다. 기준 시나리오는 2년차 흑자 전환, 출점 조건은 기준 Y1 매출의 103.6% 이상 확보. <span class="tag tag-a" title="전망·설계 가정">가정</span></p>
+    <dl class="brief">
+      <div><dt>클라이언트</dt><dd>사모펀드(PE)가 보유한 커피·베이커리 전문점 브랜드</dd></div>
+      <div><dt>과제</dt><dd>서울 1호 신규 출점지 선정(3년 뒤 성장 상권) · 인테리어 컨셉 · 메뉴 구성 · 3년 손익 시뮬레이션</dd></div>
+      <div><dt>결론</dt><dd>남부터미널역(서초구 서초1동) · 플랫폼 베이크하우스 (Platform Bakehouse) · 기준 3년 누적 영업이익 0.13억원 <span class="tag tag-a" title="전망·설계 가정">가정</span></dd></div>
+    </dl>
+    <div class="site-card">
+      <div>
+        <p class="k">최종 입지</p>
+        <p class="site-name">남부터미널역</p>
+        <p class="site-meta">서초구 서초1동 · 발달상권 · 상권코드 3120175</p>
+      </div>
+      <ul class="site-facts">
+        <li><b>36.14억원</b><span>분기 합산매출(제과+커피, 26Q2) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></span></li>
+        <li><b>0.7% → 7.1% → 17.5%</b><span>같은 2분기 YoY 3구간 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></span></li>
+        <li><b>+10.1%</b><span>유동인구 3년 증감(176상권 중앙값 −3.2%) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></span></li>
+      </ul>
+    </div>
+    <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262 · 서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq 20232·20262 · pnl.json(가정)</p>
+  </div>
+</header>
+
+<main>
+
+<section id="summary" class="sec">
+  <div class="wrap">
+    <p class="sec-no">Executive Summary</p>
+    <h2>핵심 숫자 4개</h2>
+    <div class="kpis"><article class="kpi"><div class="kpi-top"><span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></div><p class="kpi-v">+8.2%</p><p class="kpi-l">합산매출 3년 CAGR</p><p class="kpi-s">서울 전체 제과+커피 시장 +0.67%</p><p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232→20262</p></article><article class="kpi"><div class="kpi-top"><span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></div><p class="kpi-v">0.873억원</p><p class="kpi-l">베이커리 점포당 분기매출</p><p class="kpi-s">176상권 중앙값 0.494억원 · 3년 +53.1%</p><p class="src"><span>출처</span> 서울시 상권분석서비스 점포 VwsmTrdarStorQq · VwsmTrdarSelngQq 20262</p></article><article class="kpi"><div class="kpi-top"><span class="tag tag-a" title="전망·설계 가정">가정</span></div><p class="kpi-v">3.61억원</p><p class="kpi-l">손익분기 연매출</p><p class="kpi-s">월 0.30억원 · 기준 Y1 매출의 103.6%</p><p class="src"><span>출처</span> pnl.json breakeven (DART 에스씨케이컴퍼니 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> 비율 기반)</p></article><article class="kpi"><div class="kpi-top"><span class="tag tag-a" title="전망·설계 가정">가정</span></div><p class="kpi-v">+3.9%</p><p class="kpi-l">기준 시나리오 Y3 영업이익률</p><p class="kpi-s">Y1 −1.9% → Y2 +1.1% · 3년 누적 0.13억원</p><p class="src"><span>출처</span> pnl.json scenarios.기준</p></article></div>
+    <ol class="takeaways"><li>서울 제과+커피 시장은 3년 CAGR 0.67%로 정체 — 성장은 상권 간 점유율 이동이다. 남부터미널역은 같은 2분기 YoY가 3구간 모두 플러스이면서 가속하는 드문 누적형 성장 상권.</li><li>베이커리 점포는 13곳 → 11곳으로 줄었는데 점포당 매출은 +53.1%: 공급 부족형 수요. 커피는 49 → 55곳으로 포화라 베이커리가 이끄는 포맷으로 차별화한다.</li><li>손익은 상권 평균 대비 매출 배수가 가른다(가정): 보수 x0.8 3년 누적 -1.21억원, 기준 x1.0 0.13억원, 낙관 x1.3 2.25억원.</li></ol>
+    <p class="legend-note"><span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span> 서울 열린데이터광장·DART 공시에서 직접 계산한 값 &nbsp; <span class="tag tag-a" title="전망·설계 가정">가정</span> 전망·설계 가정(근거 수치와 계산식 병기)</p>
+  </div>
+</section>
+
+
+<section id="location" class="sec">
+  <div class="wrap">
+    <p class="sec-no">01 · 입지 선정</p>
+    <h2>시장은 정체, 성장은 ‘상권 간 이동’ — 그 흐름을 잡은 곳</h2>
+
+    <div class="card">
+      <h3>방법론</h3>
+      <ol class="steps"><li><b>1,650개</b><span class="st-t">서울 전체 상권</span><span class="st-d">상권분석서비스 상권영역 TbgisTrdarRelm</span></li><li><b>176개</b><span class="st-t">분석 대상</span><span class="st-d">분기 합산매출(제과점+커피-음료, 20262) 10억원 이상 &amp; 베이커리 매출이 20232·20262 모두 공표</span></li><li><b>v2 점수</b><span class="st-t">11개 지표 가중합 − 감점</span><span class="st-d">각 지표를 176개 상권 내 백분위 순위(-0.5~+0.5)로 바꾼 뒤 가중합, 감점은 절대값 차감. 결측은 0(중앙값) 처리.</span></li><li><b>3개 패널</b><span class="st-t">성장·타깃·리스크 검토</span><span class="st-d">패널별 상위 상권을 원천 7개 분기 시계열로 재확인해 단절·마스킹 상권 제외</span></li><li><b>3곳 → 1곳</b><span class="st-t">후보 → 최종</span><span class="st-d">v2 점수 상위권을 출발점으로 하되 (1) 베이커리 수요 실체(매출·점포당 매출 추세), (2) 3개 패널 합의, (3) 측정 노이즈(유동인구 급증 시 구성 불변 등) 여부를 원천 데이터로 재확인해 수석이 조정.</span></li></ol>
+      <div class="grid-2">
+        <div>
+          <h4>v2 가중치 (백분위 순위 −0.5~+0.5에 곱함)</h4>
+          <ul class="weights"><li><span class="w-name">합산_2분기YoY_중앙값</span><span class="w-bar"><i class="pos" style="width:100%"></i></span><span class="w-val">+0.25</span></li><li><span class="w-name">합산_플러스구간수</span><span class="w-bar"><i class="pos" style="width:40%"></i></span><span class="w-val">+0.10</span></li><li><span class="w-name">베이커리_2분기YoY_중앙값</span><span class="w-bar"><i class="pos" style="width:32%"></i></span><span class="w-val">+0.08</span></li><li><span class="w-name">베이커리_점포당매출_변화율</span><span class="w-bar"><i class="pos" style="width:28%"></i></span><span class="w-val">+0.07</span></li><li><span class="w-name">유동인구_증감률</span><span class="w-bar"><i class="pos" style="width:40%"></i></span><span class="w-val">+0.10</span></li><li><span class="w-name">타깃적합</span><span class="w-bar"><i class="pos" style="width:40%"></i></span><span class="w-val">+0.10</span></li><li><span class="w-name">운영영업개월</span><span class="w-bar"><i class="pos" style="width:28%"></i></span><span class="w-val">+0.07</span></li><li><span class="w-name">커피점포_증감률</span><span class="w-bar"><i class="neg" style="width:24%"></i></span><span class="w-val">-0.06</span></li><li><span class="w-name">4분기평균_폐업률</span><span class="w-bar"><i class="neg" style="width:28%"></i></span><span class="w-val">-0.07</span></li><li><span class="w-name">합산매출_최신</span><span class="w-bar"><i class="pos" style="width:20%"></i></span><span class="w-val">+0.05</span></li><li><span class="w-name">합산_객단가</span><span class="w-bar"><i class="pos" style="width:20%"></i></span><span class="w-val">+0.05</span></li></ul>
+          <p class="note">감점(절대값 차감): 단절플래그 −0.15 · 마스킹의심 −0.10 · 상권축소 −0.10 · 점프비중&gt;=0.6 −0.10</p>
+        </div>
+        <div>
+          <h4>v1 → v2로 바꾼 이유</h4>
+          <ul class="list small"><li>성장 지표를 시작·끝점 CAGR/YoY에서 같은 2분기 YoY 3구간(23→24, 24→25, 25→26)의 중앙값과 플러스 구간 수로 교체: 한 분기 계단 점프가 CAGR을 지배하던 문제(쌍문·잠실·상봉 등) 완화.</li><li>구조적 단절(한 분기 베이커리 +100% 초과 또는 커피 +60% 초과) -0.15, 점프비중(최대 단일분기 증가/3년 증가분) 0.6 이상 -0.10, 베이커리 7분기 CV 3% 미만(마스킹 의심) -0.10 감점.</li><li>배후인구 증감률(0.10) 제거: 상주인구는 20234 이후, 직장인구는 20244 이후 전 상권 값이 동결돼 있어 데이터 갱신 시점 차이를 측정하는 지표였음.</li><li>베이커리 점포당 분기매출 &#x27;수준&#x27;(0.12) 대신 3년 &#x27;변화율&#x27;(점포 3곳 이상만)로 교체: 소수 점포 집중·마스킹 상권 우대 방지.</li></ul>
+          <p class="note">176개 중 31개 상권, v1 상위 30개 중 14개에서 한 분기 구조적 단절(베이커리 +100% 초과 또는 커피 +60% 초과 QoQ) 검출</p>
+        </div>
+      </div>
+      <p class="src"><span>출처</span> scripts/analyze.py v2 · data/interim/analysis.json · trdar_scores.csv · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>서울 제과점·커피 매출 추이 <small>23Q2=100 지수</small></h3>
+        <div class="chart" style="height:260px"><canvas id="cSeoul" aria-label="서울 제과점·커피 분기 매출 지수 추이"></canvas></div>
+        <p class="note">제과점 23Q2 1,919.0억원 → 26Q2 2,002.4억원(+4.3%), 커피-음료 7,186.2억원 → 7,285.8억원(+1.4%). <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p>
+        <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20232·20242·20252·20253·20254·20261·20262 — 서울 전체 상권 합계(scripts/analyze.py)</p>
+      </div>
+      <div class="card">
+        <h3>176개 상권: 성장 vs 종합점수</h3>
+        <div class="chart" style="height:260px"><canvas id="cScatter" aria-label="176개 상권 2분기 YoY 중앙값과 v2 점수 산점도"></canvas></div>
+        <p class="note">가로축 = 같은 2분기 합산매출 YoY 3구간 중앙값, 세로축 = v2 점수. 보라 = 후보 3곳. <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p>
+        <p class="src"><span>출처</span> data/interim/trdar_scores.csv (scripts/analyze.py v2) · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>후보 3곳 비교</h3>
+      <div class="chart" style="height:240px"><canvas id="cCands" aria-label="후보 3곳 7개 분기 합산매출"></canvas></div>
+      <p class="note">7개 분기 제과+커피 합산매출(억원). <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p>
+      
+<div class="table-wrap"><table class="cmp">
+<thead><tr><th scope="col">지표</th><th scope="col" class="pick">남부터미널역<small>최종</small></th><th scope="col" class="">연희동<small>후보 2</small></th><th scope="col" class="">동대문역사문화공원역<small>후보 3</small></th></tr></thead>
+<tbody><tr><th scope="row">자치구·행정동 </th><td>서초구 서초1동</td><td>서대문구 연희동</td><td>중구 광희동</td></tr><tr><th scope="row">v2 순위(점수) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>3위 (0.197)</td><td>2위 (0.209)</td><td>7위 (0.165) · 감점 0.10</td></tr><tr><th scope="row">분기 합산매출 26Q2 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>36.14억원</td><td>29.15억원</td><td>37.70억원</td></tr><tr><th scope="row">합산 CAGR3 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>8.2%</td><td>4.8%</td><td>12.0%</td></tr><tr><th scope="row">2분기 YoY 3구간 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>0.7% / 7.1% / 17.5%</td><td>7.4% / 3.0% / 4.2%</td><td>22.3% / −0.5% / 15.3%</td></tr><tr><th scope="row">점프비중 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>0.44</td><td>0.50</td><td>0.78</td></tr><tr><th scope="row">베이커리 매출 3년전 → 최신 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>7.42 → 9.61억원</td><td>2.73 → 2.90억원</td><td>6.70 → 9.91억원</td></tr><tr><th scope="row">베이커리 점포당 분기매출 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>0.873억원 (+53.1%)</td><td>0.161억원 (+23.8%)</td><td>0.991억원 (+33.1%)</td></tr><tr><th scope="row">베이커리 / 커피 점포 (3년전→최신) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>13→11 / 49→55</td><td>21→18 / 50→47</td><td>9→10 / 60→58</td></tr><tr><th scope="row">표본 4분기 평균 폐업률 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>2.7%</td><td>7.0%</td><td>3.5%</td></tr><tr><th scope="row">유동인구 3년 증감 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>+10.1%</td><td>+30.1%</td><td>+1.3%</td></tr><tr><th scope="row">2030 / 여성 / 주말 비중 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>34.4% / 38.8% / 18.6%</td><td>61.8% / 68.7% / 40.0%</td><td>48.0% / 53.9% / 30.8%</td></tr><tr><th scope="row">오전(06~11시) 매출 비중 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>23.9%</td><td>7.1%</td><td>14.0%</td></tr><tr><th scope="row">합산 객단가 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>6,421원</td><td>10,403원</td><td>8,762원</td></tr><tr><th scope="row">상권변화지표 · 평균 운영개월 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td>정체 · 153개월</td><td>상권확장 · 103개월</td><td>정체 · 134개월</td></tr><tr><th scope="row">3년 후 분기 합산매출 기본 / 보수 <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td>42.7 / 40.5억원</td><td>32.2 / 31.3억원</td><td>48.0 / 47.5억원</td></tr></tbody></table></div>
+<p class="note">176상권 중앙값: 2030 37.6% · 여성 51.5% · 주말 29.5% · 오전 15.4% · 객단가 8,367원.
+3년 후 전망 <span class="tag tag-a" title="전망·설계 가정">가정</span>: 기본 = 분기 합산매출 × (1 + min(CAGR3, 25%) × 0.7)³, 보수 = 분기 합산매출 × (1 + 0.5×min(2분기 YoY 중앙값, 25%) + 0.5×서울 시장 CAGR3)³로 평균 회귀.</p>
+<p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20232·20242·20252·20253·20254·20261·20262 · 서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20232·20242·20252·20262 · 서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq, 20232·20242·20252·20262 · 서울시 상권분석서비스 상주인구 VwsmTrdarRepopQq (전 분기) · 서울시 상권분석서비스 상권변화지표 VwsmTrdarIxQq, 20262</p>
+
+    </div>
+
+    <div class="grid-2">
+      <div class="card accent">
+        <h3>최종지 근거 — 남부터미널역</h3>
+        <ol class="list"><li>서초구 남부터미널역은 같은 2분기 합산매출 YoY가 0.7% → 7.1% → 17.5%로 3년 연속 플러스이면서 가속하는, 구조적 단절이 없는 누적형 성장 상권이다(VwsmTrdarSelngQq 20232~20262).</li><li>베이커리 점포가 13곳에서 11곳으로 줄었는데 베이커리 매출은 7.42억에서 9.61억원으로 늘어, 점포당 매출이 53.1% 오른 수요 초과 상권이다(VwsmTrdarStorQq·SelngQq).</li><li>유동인구는 10.1% 늘어 서울 176개 분석 상권 중앙값(-3.2%)과 반대로 움직였다(VwsmTrdarFlpopQq 20232→20262).</li><li>평균 운영 영업개월 153개월(서울 118개월)로 폐업 위험이 낮고, 성장 모멘텀·리스크 두 패널이 독립적으로 1위로 꼽았으며 개선된 v2 스코어에서도 단절·감점이 없는 상위 상권이다.</li><li>커피 매출은 11~14시에 39.4% 몰리는 반면 베이커리는 06~11시 22.1%·17~21시 26.0%로 분산돼 복합 매장이 시간대를 메우기 좋고, 3년 후 분기 합산매출은 기본 가정 42.7억원, 보수 가정 40.5억원이다(가정).</li></ol>
+        <p class="note">성장 모멘텀 패널 1위, 리스크·경쟁 패널 1위, 타깃 적합 패널은 후보 외(잠실 관광특구 지지)</p>
+        <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262 · 서울시 상권분석서비스 점포 VwsmTrdarStorQq 20232·20262 · 서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq 20232·20262 · 서울시 상권분석서비스 상권변화지표 VwsmTrdarIxQq 20262</p>
+      </div>
+      <div class="card">
+        <h3>리스크</h3>
+        <ul class="list risk"><li>상권변화지표 &#x27;정체&#x27;: 성숙 상권이라 신규 진입은 기존 점포 점유율을 가져와야 함.</li><li>커피 점포 49 → 55곳 증가, 20262 커피 폐업률 7%: 커피 단독 포맷은 포화.</li><li>합산 고객 구성이 오피스형: 주말 18.6%(중앙값 29.5%), 2030 34.4%(중앙값 37.6%), 객단가 6,421원(중앙값 8,367원) — 프리미엄 가격 수용성은 미검증.</li><li>25→26 YoY 17.5%는 1개 분기 결과이고, 20254(29.4억원)처럼 분기 중 하락한 적이 있음.</li><li>임대료 공공데이터 없음 → 서초권 임차료는 DART 매출 대비 비율로만 추정(데이터 없음).</li></ul>
+        <p class="src"><span>출처</span> 서울시 상권분석서비스 점포 VwsmTrdarStorQq 20232·20262 · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 · 서울시 상권분석서비스 상권변화지표 VwsmTrdarIxQq 20262</p>
+      </div>
+    </div>
+
+    <details class="card fold">
+      <summary>반대 의견과 대응 (5건)</summary>
+      <div class="qa"><p class="qa-q">타깃 패널: 잠실 관광특구가 규모·객단가·2030 비중에서 플래그십에 더 적합하다.</p><p class="qa-a">잠실은 20232→20242 베이커리 한 분기 단절(점포 감소 동반)로 CAGR이 부풀었고 단절 이후 연율 -3.8%로 감소 중. &#x27;3년 뒤 성장&#x27; 과제에 맞지 않아 1호점에서 제외, 브랜드 인지 확보 후 2호점 플래그십 후보로 보류.</p></div><div class="qa"><p class="qa-q">남부터미널역은 오피스형 상권(주말 18.6%, 2030 34.4%, 객단가 6,421원)이라 프리미엄 타깃과 어긋난다.</p><p class="qa-a">베이커리 오전(06~11시) 매출 비중 22.1%·여성 비중 48.5%를 겨냥해 출근길 그랩앤고 + 테이크아웃 빵 중심으로 설계하고, 메뉴 가격은 상권 객단가 수준에서 시작(프리미엄 가격 수용성은 오픈 후 검증).</p></div><div class="qa"><p class="qa-q">커피 점포가 49 → 55곳으로 늘어 커피 경쟁이 포화다.</p><p class="qa-a">커피 단독이 아닌 베이커리 주도 포맷으로 차별화(베이커리는 점포 감소·점포당 매출 상승 구간). 커피는 베이커리 동반 구매 중심으로 구성.</p></div><div class="qa"><p class="qa-q">25→26 YoY 17.5%는 한 분기 결과일 수 있고 상권변화지표가 &#x27;정체&#x27;이다.</p><p class="qa-a">손익 시뮬레이션은 보수(서울 시장 성장률로 평균 회귀, 연 3.9%)·기준(CAGR3×0.7)·낙관 3개 시나리오를 함께 제시해 보수 시나리오의 손실 폭을 확인하고, 2026년 3분기 공표 후 재검증을 출점 게이트로 둔다.</p></div><div class="qa"><p class="qa-q">서초권 임대료가 높을 수 있다.</p><p class="qa-a">임대료 공공데이터가 없어 상권 간 비교 불가(데이터 없음). 손익에서는 DART 감사보고서의 매출 대비 임차료 비율로만 추정하고 민감도 분석으로 보완.</p></div>
+    </details>
+    <details class="card fold">
+      <summary>패널이 제기했지만 제외한 상권 (12건)</summary>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>상권</th><th>제기</th><th>판정</th><th>근거</th></tr></thead><tbody><tr><th scope="row">잠실 관광특구</th><td>타깃 패널 최종 1위</td><td><b>후보 제외</b></td><td>베이커리 매출 20232 9.13억 → 20242 65.93억원(한 분기 단절), 같은 기간 베이커리 점포 53 → 42곳 감소. 인접 잠실역도 같은 분기 8.01억 → 65.34억원 동시 급증(영역 중복 의심). 단절 이후 20242→20262 합산 연율 -3.8%, 최근 YoY -7.2%. &#x27;3년 뒤 성장&#x27; 기준에 불합격(v2 73위). 타깃·규모(객단가 11,719원, 2030 47.4%)는 우수해 2호점 이후 플래그십 검토 대상으로 보류.</td></tr><tr><th scope="row">쌍문역동측상점가</th><td>v1 1위</td><td><b>제외</b></td><td>베이커리 20252 13.33억 → 20253 31.88억원 한 분기 단절, 베이커리 점포 8 → 5곳 감소, 점포당 5.04억원(176 중앙값 0.494억원). v2 38위.</td></tr><tr><th scope="row">북창동(시청역_6번)</th><td>성장 패널 2위</td><td><b>후보 제외</b></td><td>YoY 3구간 [0.8, 10.0, 33.4]%로 모두 플러스이나 베이커리 20232 0.99억 → 20242 2.15억원 단절(점포 4 → 6곳 개업 기저효과). 유동인구 -9.5%, 주말 비중 13.4%로 오피스 점심 편중. v2 31위.</td></tr><tr><th scope="row">종로3가역</th><td>성장 패널 3위</td><td><b>후보 제외(관찰 대상)</b></td><td>YoY 3구간 [26.0, 6.4, 10.5]% 모두 플러스이나 점프비중 0.82, 20253~20261 3분기 연속 하락(83.2 → 70.7억원) 후 반등. 베이커리 6.8억 → 7.73억원 정체, 베이커리 점포당 0.368억원(중앙값 미만). 커피 중심 성장이라 베이커리 복합 포맷에 불리. v2 8위.</td></tr><tr><th scope="row">합정역</th><td>타깃 패널 2위</td><td><b>후보 제외(관찰 대상)</b></td><td>YoY 3구간 [9.0, -16.3, 26.6]%로 들쭉날쭉, 점프비중 1.18. 베이커리 최근 3분기 9.09 → 12.1 → 15.53억원 상승은 긍정적이나 유동인구 -13.5%. v2 14위. 2026년 3·4분기 지속 시 재검토.</td></tr><tr><th scope="row">북촌(안국역)</th><td>타깃 패널 3위</td><td><b>제외</b></td><td>베이커리 20242 43.24억 → 20262 27.94억원 하락, 최근 YoY -18.3%, 20232→20242 베이커리 단절. v2 83위.</td></tr><tr><th scope="row">여의도역(여의도)</th><td>리스크 패널 3위</td><td><b>후보 제외</b></td><td>베이커리 CAGR3 0.5%로 정체, 주말 비중 9.9%, 커피 점포 209곳 포화. v1 점수의 배후인구 가점은 직장인구 동결 데이터 효과. v2 40위.</td></tr><tr><th scope="row">이화사거리</th><td>v2 점수 1위</td><td><b>후보 제외(수석 판단으로 점수 순위 조정)</b></td><td>합산매출 15.7억원으로 후보 규모 미달 수준이고 베이커리 점포 4곳, 베이커리 매출 1.99 → 1.96억원 감소(성장은 커피뿐). 유동인구 81.0%는 시간대·연령 구성이 그대로인 채 급증해 길단위 추정 변경 의심(성장 패널 지적).</td></tr><tr><th scope="row">서울시청</th><td>v2 점수 4위</td><td><b>후보 제외</b></td><td>YoY 3구간 [10.1, -7.4, 71.7]%로 성장이 25→26 한 구간에 집중, 베이커리 점포 5곳(소수 점포 의존), 2030 비중 26.8%로 타깃 부적합.</td></tr><tr><th scope="row">강남 마이스 관광특구</th><td>v2 점수 5위</td><td><b>제외</b></td><td>점프비중 0.86, 베이커리 20254 25.89억 → 20262 12.93억원 급감, 관광특구로 코엑스 상권과 영역 중복.</td></tr><tr><th scope="row">삼전역 1번</th><td>v2 점수 6위</td><td><b>제외</b></td><td>YoY 3구간 [-23.2, 16.8, 8.4]%(첫 구간 마이너스), 합산매출 14.9억원 소규모, 상권변화지표 &#x27;다이나믹&#x27;.</td></tr><tr><th scope="row">연희동 vs 남부터미널역</th><td>v2 점수는 연희동(2위)이 남부터미널역(3위)보다 높음</td><td><b>최종은 남부터미널역</b></td><td>점수 차 0.012. 연희동이 앞선 항목(가중 기여 차): 타깃적합 +0.085, 합산_객단가 +0.035, 커피점포_증감률 +0.029 / 남부터미널역이 앞선 항목: 운영영업개월 +0.051, 4분기평균_폐업률 +0.049, 합산_2분기YoY_중앙값 +0.024. 핵심인 베이커리 수요에서 남부터미널역이 우위: 베이커리 매출 9.61억 vs 2.9억원, 점포당 0.873억 vs 0.161억원, 합산 CAGR3 8.2% vs 4.8%, 4분기 평균 폐업률 2.7% vs 7.0%.</td></tr></tbody></table></div>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262 · 서울시 상권분석서비스 점포 VwsmTrdarStorQq</p>
+    </details>
+  </div>
+</section>
+
+
+<section id="competition" class="sec alt">
+  <div class="wrap">
+    <p class="sec-no">01-B · 베이커리 경쟁 현황</p>
+    <h2>남부터미널역은 프리미엄 베이커리 공백 상권 — 500m 안 대형 프랜차이즈 2곳, 1km 안 트렌드 브랜드 0곳</h2>
+    <p class="lead">서울시 인허가 데이터로 영업 중인 베이커리를 상권 중심 반경(상권 면적의 등가 원)과 500m 배후권으로 집계했습니다. 후보 3곳 중 남부터미널역이 밀도는 가장 낮고, 업소 1곳당 베이커리 매출은 가장 큽니다.</p>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>상권</th><th>500m 대형 프랜차이즈</th><th>500m 트렌드/프리미엄</th><th>500m 기타 다점포</th><th>500m 개인/독립</th><th>500m 합계</th><th>상권 반경 내 합계</th><th>최근 3년 신규(500m)</th></tr></thead><tbody><tr><th scope="row">남부터미널역</th><td>2</td><td>1</td><td>1</td><td>8</td><td>12</td><td>3</td><td>6</td></tr><tr><th scope="row">연희동</th><td>1</td><td>0</td><td>0</td><td>21</td><td>22</td><td>4</td><td>9</td></tr><tr><th scope="row">동대문역사문화공원역</th><td>1</td><td>1</td><td>6</td><td>16</td><td>24</td><td>18</td><td>7</td></tr></tbody></table></div>
+    <div class="card" style="margin-top:20px"><h3>시사점</h3><ul class="list"><li>[결론] 남부터미널역은 &#x27;프리미엄 공백이 대부분 남아 있으나 첫 경쟁자가 막 들어온&#x27; 상권. 500m 내 베이커리 12곳 = 파리바게뜨 2·뚜레쥬르 0·파리크라상 0, 트렌드/프리미엄 1(아방베이커리 서초점, 217m, 174㎡, 인허가 2025-11-21), 기타 다점포 1, 개인/독립 8. DART로 확인되는 트렌드 브랜드(런던베이글뮤지엄·노티드·성심당·아티제) 최근접 매장은 (주)보나비 아티제 뱅뱅사거리점 1166m, (주)보나비 아티제 삼성타운2점 1206m → 1km 안에 트렌드 브랜드 없음. 대형 프리미엄 포맷(100㎡+)으로 들어가면 직접 경쟁은 1곳.</li><li>[수요 대비 공급] 상권 제과점 분기매출 960.7백만원(20262) / 상권분석서비스 공식 점포수 5곳 = 점포당 192.1백만원, 서울 평균 46.3백만원의 4.1배. 인허가 기준 분모로 바꾸면 반경 288m 내 3곳 → 320.2백만원, 500m 내 12곳 → 80.1백만원. 500m 업소수는 서울 평균의 1.01배(백분위 0.635) → 공급은 평균 수준인데 매출이 커 1곳당 몫이 큰 &#x27;고매출·보통밀도&#x27; 상권. 분모 선택에 따라 값이 2~4배 달라지므로 손익에는 범위로 써야 함.</li><li>[진입 동학] 최근 3년(인허가일 ≥ 2023-11-14) 500m 내 신규 6곳 (대형 0, 프리미엄 1, 개인 4) - 대형 프랜차이즈의 신규 출점은 없고 진입은 개인·프리미엄 위주.</li><li>[후보 비교] 연희동: 500m 내 22곳(대형 1, 프리미엄 0, 기타 다점포 0, 개인 21; 서울 백분위 0.905), 공식 점포당 분기매출 17.0백만원, 3년 신규 9곳, 대형·프리미엄 브랜드 {&#x27;파리바게뜨&#x27;: 1} → 남부터미널보다 밀도 높고 1곳당 매출 낮음.</li><li>[후보 비교] 동대문역사문화공원역: 500m 내 24곳(대형 1, 프리미엄 1, 기타 다점포 6, 개인 16; 서울 백분위 0.927), 공식 점포당 분기매출 123.9백만원, 3년 신규 7곳, 대형·프리미엄 브랜드 {&#x27;롤링핀&#x27;: 1, &#x27;파리바게뜨&#x27;: 1} → 남부터미널보다 밀도 높고 1곳당 매출 낮음.</li><li>[손익 보정 시사] 남부터미널 500m 내 업소의 67%가 개인/독립이고 평균 면적 69.7㎡. 상권 &#x27;점포당 평균 매출&#x27;은 소형 개인 빵집이 섞인 값이라 100㎡+ 브랜드 직영점 매출의 하한으로만 쓰고, 기준 매출은 DART 감사보고서의 매장당 매출(엘비엠·지에프에프지·보나비 등)로 재보정 필요.</li></ul></div>
+    
+      <h3 style="margin-top:28px">남부터미널역 반경 500m 베이커리 (가까운 순 12곳)</h3>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>상호</th><th>유형</th><th>거리(m)</th><th>인허가일</th></tr></thead><tbody><tr><td>아방베이커리 서초점</td><td>트렌드/프리미엄</td><td>217</td><td>2025-11-21</td></tr><tr><td>빵드미쉘</td><td>개인/독립</td><td>243</td><td>2026-03-24</td></tr><tr><td>Be tween(비트윈)</td><td>개인/독립</td><td>267</td><td>2025-12-22</td></tr><tr><td>베이커리팩토리 에브리데이 남부터미널점</td><td>기타 다점포</td><td>298</td><td>2024-08-01</td></tr><tr><td>파리바게뜨 서초중앙</td><td>대형 프랜차이즈</td><td>315</td><td>2008-04-23</td></tr><tr><td>오즈룸</td><td>개인/독립</td><td>341</td><td>2014-07-02</td></tr><tr><td>더 베이크 (THE BAKE) 서초점</td><td>개인/독립</td><td>361</td><td>2022-11-16</td></tr><tr><td>에프.에이프릴(F.April)</td><td>개인/독립</td><td>368</td><td>2024-02-27</td></tr><tr><td>레프레미스</td><td>개인/독립</td><td>418</td><td>2016-10-28</td></tr><tr><td>사랑의일터(사랑의베이커리)</td><td>개인/독립</td><td>434</td><td>2021-11-11</td></tr><tr><td>파리바게뜨남부터미널점</td><td>대형 프랜차이즈</td><td>489</td><td>2003-12-12</td></tr><tr><td>에쿵(Egg Kung)</td><td>개인/독립</td><td>494</td><td>2024-10-07</td></tr></tbody></table></div>
+    <p class="src"><span>출처</span> 서울시 제과점영업 인허가 LOCALDATA_072218 · 휴게음식점 인허가 LOCALDATA_072405 (영업 중, 2026-11-14 수집) · 상권영역 TbgisTrdarRelm · 추정매출 VwsmTrdarSelngQq 20262. 브랜드 분류: 데이터에 반복 등장하는 다점포 상호 기준(파리바게뜨·뚜레쥬르 = 대형 프랜차이즈). 좌표계 검증: 최근접 상권 자치구 일치율 93%, 거리 중앙값 197m.</p>
+  </div>
+</section>
+
+<section id="interior" class="sec alt">
+  <div class="wrap">
+    <p class="sec-no">02 · 인테리어 컨셉</p>
+    <h2>플랫폼 베이크하우스 (Platform Bakehouse)</h2>
+    <p class="lead dark">출근길엔 3분 안에 빵과 커피를 집어 가고, 퇴근길엔 오늘 구운 빵을 장바구니에 담아 가는 역세권 베이커리 주도형 복합 매장 — 좌석보다 오븐과 동선이 주인공.</p>
+
+    <div class="card">
+      <h3>고객 정의 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></h3>
+      <ul class="list"><li>주중형: 합산 매출 주중 81.4%(176상권 중앙값 주말 29.5% 대비 주말 18.6%), 직장인구 21,560명이 상주인구 3,906명의 5.5배.</li><li>아침형: 합산 06~11시 매출 23.9%(176상권 중앙값 15.4%), 유동인구도 06~11시가 21.9%로 최다 시간대.</li><li>이중 고객층: 커피는 남성 44.8%·30대 25.0%의 점심(11~14시 39.4%) 수요, 베이커리는 여성 48.5%·40대 이상 51.6%의 퇴근길(17~21시 26.0%) 수요.</li><li>객단가: 베이커리 9,309원 vs 커피 5,773원, 합산 6,421원(176상권 중앙값 8,367원) — 가격은 상권 수준에서 시작하고 객단가는 빵 동반구매로 올린다.</li><li>심야 미수익화: 유동인구 21~06시 27.8%인데 합산 매출은 4.5% — 심야 영업 연장은 비권장.</li><li>비중 정의: 성별·연령 비중은 모두 해당 업종 분기 총매출 대비. 성별·연령 미상(법인카드 등) 매출이 있어 남+여, 연령대 합이 100%가 되지 않는다.</li></ul>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 · 서울시 상권분석서비스 직장인구 VwsmTrdarWrcPopltnQq 20262(20244 이후 값 동결) · 서울시 상권분석서비스 상주인구 VwsmTrdarRepopQq 20262(20234 이후 값 동결) · 서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq 20262</p>
+    </div>
+
+    <div class="grid-2">
+    <article class="card persona">
+      <h3>페르소나 A — 출근·점심 그랩앤고 오피스 워커</h3>
+      <p class="muted">30~40대 직장인(남녀 혼합, 커피 결제는 남성 우위), 평일 08시 전후 출근길·12시 점심 직후 방문, 1인 테이크아웃 중심</p>
+      <div class="chips"><span>3분 이내 결제·픽업</span><span>모바일 선주문 픽업 선반</span><span>커피+샌드위치/크루아상 세트</span><span>점심 직후 짧은 대기 동선</span></div>
+      <ul class="evid"><li><b>직장인구 21,560명 / 상주인구 3,906명 = 5.5배; 직장인구 20~40대 15,023명(69.7%)</b><span>상권 고객 기반은 상주보다 직장인구</span></li><li><b>커피 11~14시 39.4%, 06~11시 24.5% (합 63.9%)</b><span>커피 매출은 점심·아침에 집중</span></li><li><b>커피 30대 25.0%, 30~40대 41.4%, 남성 44.8%</b><span>커피 결제 고객은 30~40대·남성 우위</span></li><li><b>커피 객단가 5,773원, 분기 거래 459,581건, 주중 82.4%</b><span>커피는 저단가 고빈도 구매</span></li><li><b>남부터미널(예술의전당)역 승하차 평일 평균 68,191명/일, 주말 평균 48,930명/일(평일의 72%)</b><span>역 이용은 평일 집중</span></li></ul>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 직장인구 VwsmTrdarWrcPopltnQq, 20262 (20244 이후 값 동결); 서울시 상권분석서비스 상주인구 VwsmTrdarRepopQq, 20262 (20234 이후 값 동결) · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262 · 서울시 지하철 호선별 역별 승하차 인원 CardSubwayStatsNew, 2026-11-02~2026-11-08 (1주)</p>
+    </article>
+    <article class="card persona">
+      <h3>페르소나 B — 퇴근길·외출길 빵 장보기 고객</h3>
+      <p class="muted">40~60대 이상 여성 중심, 퇴근길(17~21시) 또는 오전 장보기·병원/관공서 방문 겸 들러 식빵·과자빵을 2~3개 이상 담아 가는 고객. 상권 내 슈퍼마켓 0곳이라 빵이 저녁 장바구니 역할.</p>
+      <div class="chips"><span>오후 2차 굽기로 퇴근 시간대 갓 구운 빵</span><span>식사빵·식빵 중심 진열과 넉넉한 포장</span><span>고령 고객도 읽기 쉬운 가격표·넓은 통로</span><span>짧은 대기용 소형 벤치</span></div>
+      <ul class="evid"><li><b>베이커리 여성 48.5%(커피 35.3%), 40대 이상 51.6%, 60대 이상 17.9%(커피 10.6%)</b><span>베이커리 결제는 여성·40대 이상 비중이 높음</span></li><li><b>17~21시 베이커리 26.0% vs 커피 12.9%</b><span>베이커리는 퇴근 시간대 비중이 커피의 2배</span></li><li><b>베이커리 객단가 9,309원 vs 커피 5,773원</b><span>베이커리 객단가는 커피보다 높아 복수 구매 성격</span></li><li><b>슈퍼마켓 0곳, 종합병원 2곳, 관공서 2곳, 은행 7곳, 집객시설 총 79곳</b><span>상권 내 장보기 대체 시설 부재, 방문 목적 시설 존재</span></li><li><b>베이커리 점포 11곳(3년전 13곳), 점포당 분기매출 0.873억원(176 중앙값 0.494억원)</b><span>베이커리 공급은 줄고 점포당 수요는 큼</span></li></ul>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20232·20262; 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262 · 서울시 상권분석서비스 집객시설 VwsmTrdarFcltyQq, 20262 · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262</p>
+    </article></div>
+
+    <div class="card">
+      <h3>존 구성 — 약 55㎡(16.6평) · 10석 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+      <div class="zone-bar" role="img" aria-label="존 면적 비율"><i style="flex:30;background:#4C1D95" title="베이크 오픈키친(생산·오븐 쇼) 30%"></i><i style="flex:22;background:#7C3AED" title="빵 진열·그랩앤고 계산대 22%"></i><i style="flex:13;background:#A78BFA" title="테이크아웃 커피바(모바일 픽업 선반 포함) 13%"></i><i style="flex:30;background:#DDD6FE" title="좌석(창가 카운터석+2인 테이블) 30%"></i><i style="flex:5;background:#94A3B8" title="백오피스·창고·화장실 5%"></i></div>
+      <ul class="zones"><li><span class="sw" style="background:#4C1D95"></span><div><p class="z-t">베이크 오픈키친(생산·오븐 쇼) <b>30% · 16.5㎡</b> <span class="tag tag-a" title="전망·설계 가정">가정</span></p><p class="z-d">베이커리 주도 포맷. 점포당 베이커리 매출이 176상권 중앙값의 1.8배로 생산 능력이 매출 상한이 되므로 오븐·작업대 면적을 최우선 확보. 유리벽 오픈키친으로 굽는 모습을 출입구 쪽에 노출해 커피 55곳 사이에서 시각적 차별화.</p><p class="z-e">근거: 베이커리 점포당 분기매출 0.873억원 vs 중앙값 0.494억원 (서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20262; 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262); 커피 점포 49→55곳 (서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20232·20262)</p></div></li><li><span class="sw" style="background:#7C3AED"></span><div><p class="z-t">빵 진열·그랩앤고 계산대 <b>22% · 12.1㎡</b> <span class="tag tag-a" title="전망·설계 가정">가정</span></p><p class="z-d">오전(06~11시) 합산 매출 비중이 중앙값보다 8.5%p 높고, 베이커리는 시간대가 06~11/11~14/14~17/17~21에 고르게 분산 → 입구 정면 진열대와 셀프 트레이 2레인 계산대로 체류 없이 회전.</p><p class="z-e">근거: 합산 06~11시 23.9% vs 중앙값 15.4%; 베이커리 시간대 22.1/27.7/20.6/26.0% (서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262; 서울시 상권분석서비스 VwsmTrdarSelngQq 20262 기준 176개 분석상권 중앙값 (data/interim/location.json, scripts/analyze.py))</p></div></li><li><span class="sw" style="background:#A78BFA"></span><div><p class="z-t">테이크아웃 커피바(모바일 픽업 선반 포함) <b>13% · 7.2㎡</b> <span class="tag tag-a" title="전망·설계 가정">가정</span></p><p class="z-d">커피는 11~14시에 39.4% 집중 → 점심 피크용 별도 커피 픽업 카운터와 모바일 선주문 선반. 커피 단독 경쟁은 포화이므로 면적은 최소, 빵 동반구매 동선 끝에 배치.</p><p class="z-e">근거: 커피 11~14시 39.4%, 커피 폐업률 20262 7% (서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262; 서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20262)</p></div></li><li><span class="sw" style="background:#DDD6FE"></span><div><p class="z-t">좌석(창가 카운터석+2인 테이블) <b>30% · 16.5㎡</b> <span class="tag tag-a" title="전망·설계 가정">가정</span></p><p class="z-d">주말 비중이 낮고(18.6%) 객단가가 낮은(6,421원) 오피스형 상권이라 대형 체류 좌석은 비효율. 평일 피크 시간당 거래 기반 계산값으로 10석만 확보하고, 창가 1인 카운터석 6석 + 2인 테이블 2개(4석)로 구성, 2인 테이블은 붙여 오후(14~17시) 소규모 미팅에 대응.</p><p class="z-e">근거: 합산 주말 18.6% vs 중앙값 29.5%; 객단가 6,421원 vs 8,367원; 합산 14~17시 19.0% (서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262; 서울시 상권분석서비스 VwsmTrdarSelngQq 20262 기준 176개 분석상권 중앙값 (data/interim/location.json, scripts/analyze.py)); 좌석 계산은 assumptions 참조</p></div></li><li><span class="sw" style="background:#94A3B8"></span><div><p class="z-t">백오피스·창고·화장실 <b>5% · 2.8㎡</b> <span class="tag tag-a" title="전망·설계 가정">가정</span></p><p class="z-d">반죽·원재료 보관은 오픈키친 내 냉장 설비로 상당 부분 흡수, 백오피스는 최소화(가정).</p><p class="z-e">근거: 데이터 없음(설계 가정)</p></div></li></ul>
+      <p class="src"><span>출처</span> interior.json zones·assumptions (설계 가정, 계산식은 아래 표) · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 · 서울시 상권분석서비스 점포 VwsmTrdarStorQq 20232·20262</p>
+    </div>
+
+    <div class="card">
+      <h3>하루 운영 시나리오 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+      <ol class="timeline"><li><p class="tl-t">06:30~11:00 출근·아침</p><p class="tl-b">합산 매출 23.9%, 유동인구 21.9%(최다) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">06:30 오픈(가정), 1차 굽기 완료 상태로 시작. 그랩앤고 진열대에 크루아상·샌드위치·커피 세트 집중, 계산대 2레인 + 모바일 픽업 선반 가동, 좌석은 창가 카운터석만 개방 느낌으로 조명 밝게.</p></li><li><p class="tl-t">11:00~14:00 점심 피크</p><p class="tl-b">합산 매출 36.3%(최대), 커피 39.4% <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">커피바 인력 최대 배치, 점심 후 커피+디저트빵 세트. 2차 굽기는 13시 전후 시작해 퇴근 시간대 대비. 좌석 회전 우선(카운터석·2인석).</p></li><li><p class="tl-t">14:00~17:00 오후 미팅·간식</p><p class="tl-b">합산 매출 19.0%, 베이커리 20.6% <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">2인 테이블 결합 배치로 체류 고객 수용. 조명 색온도를 낮추고 디저트·조각케이크 진열 강화, 오븐 쇼(갓 나온 빵 알림)로 오후 객 유입.</p></li><li><p class="tl-t">17:00~21:00 퇴근길 빵 장보기</p><p class="tl-b">베이커리 매출 26.0% (커피 12.9%) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">2차 굽기 빵을 입구 진열대로 전진 배치, 식빵·식사빵·묶음 포장 중심. 커피바는 축소 운영하고 계산 인력을 빵 계산대로 전환.</p></li><li><p class="tl-t">21:00 마감</p><p class="tl-b">합산 21~24시 매출 2.8% vs 유동인구 21~24시 9.9% <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">21시 마감(가정). 유동인구는 남지만 결제로 이어지지 않아 심야 연장 비권장. 마감 30분 전 당일빵 묶음 판매로 폐기 최소화.</p></li><li><p class="tl-t">주말</p><p class="tl-b">합산 매출 주말 18.6%, 유동인구 토·일 23.5%, 지하철 주말 평균 = 평일의 72% <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p><p class="tl-s">평일 대비 축소 인력·생산량(가정). 유동인구 비중(23.5%)보다 매출 비중이 낮아 주말 잠재수요가 미흡수 상태 — 주말 한정 브런치 빵 세트로 테스트 후 확대 판단.</p></li></ol>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 · 서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq 20262 · 서울시 지하철 호선별 역별 승하차 인원 CardSubwayStatsNew, 2026-11-02~2026-11-08 (1주)</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>무드 팔레트 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <ul class="palette"><li><span class="chip-c" style="background:#8B5A2B"></span><b>크러스트 브라운</b><code>#8B5A2B</code><span>오픈키친 벽·진열대 하부 — 굽는 빵의 색을 공간 주조색으로</span></li><li><span class="chip-c" style="background:#F4EDE1"></span><b>밀가루 아이보리</b><code>#F4EDE1</code><span>벽·천장 바탕 — 아침 시간대 밝고 깨끗한 인상</span></li><li><span class="chip-c" style="background:#2F3237"></span><b>플랫폼 차콜</b><code>#2F3237</code><span>카운터·사인·금속 프레임 — 역/터미널 인프라 모티프</span></li><li><span class="chip-c" style="background:#E0702E"></span><b>시그널 오렌지</b><code>#E0702E</code><span>갓 구운 빵 알림 사인·픽업 선반 포인트 — 동선 유도</span></li><li><span class="chip-c" style="background:#8FA58A"></span><b>세이지 그린</b><code>#8FA58A</code><span>좌석존 패브릭·식물 — 오후 체류 구역의 이완감</span></li></ul>
+      </div>
+      <div class="card">
+        <h3>소재·조명 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <ul class="materials"><li><b>테라조(밝은 아이보리 베이스) 바닥</b><span>아침·점심 피크 고회전 동선의 내구성과 청소 용이성</span></li><li><b>오크 원목 진열대·카운터석 상판</b><span>빵과 어울리는 따뜻한 질감, 40~60대 고객에게 친숙한 톤</span></li><li><b>유리 파티션 오픈키친 + 스테인리스 작업대</b><span>굽는 과정 노출로 커피 단독 매장과 차별화, 위생 신뢰</span></li><li><b>차콜 분체도장 철재 프레임·사인</b><span>역세권 인프라(플랫폼) 모티프, 그랩앤고 동선 사인 가독성</span></li><li><b>조명: 아침 4000K 고조도 → 14시 이후 3000K 웜 디밍, 진열대 고연색(CRI 90+) 스팟</b><span>시간대별 시나리오(회전→체류→퇴근 장보기)에 맞춘 무드 전환, 빵 색감 표현</span></li></ul>
+      </div>
+    </div>
+
+    <details class="card fold">
+      <summary>면적·좌석 산정 가정과 계산식</summary>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>항목</th><th>값</th><th>계산식</th><th>출처</th></tr></thead><tbody><tr><th scope="row">신규 매장 일 거래건수</th><td><b>194.9건/일</b></td><td>베이커리 분기거래 103,198건 ÷ 점포 11곳 ÷ 91일 (103.1) + 커피 분기거래 459,581건 ÷ 점포 55곳 ÷ 91일 (91.8)</td><td>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262; 서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20262</td></tr><tr><th scope="row">평일 일 거래건수</th><td><b>222.1건/일</b></td><td>일 거래 × 91일 × 주중 매출비중 81.4% ÷ 평일 65일</td><td>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262</td></tr><tr><th scope="row">평일 피크 시간당 거래(11~14시)</th><td><b>26.9건/시간</b></td><td>평일 일 거래 × 11~14시 매출비중 36.3% ÷ 3시간</td><td>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262</td></tr><tr><th scope="row">좌석 수</th><td><b>10석 (계산값 10.0석)</b></td><td>피크 시간당 거래 × 매장취식률 0.35 × 거래당 인원 1.5 × 체류 0.6시간 ÷ 점유효율 0.85</td><td>설계 가정(입력 거래 수치는 VwsmTrdarSelngQq 20262)</td></tr><tr><th scope="row">총 면적</th><td><b>55㎡ (약 16.6평)</b></td><td>좌석 10석 × 1석당 1.6㎡ = 16.0㎡ ÷ 좌석존 비중 30% = 53.3㎡ → 5㎡ 단위 반올림</td><td>설계 가정</td></tr><tr><th scope="row">좌석·면적 민감도</th><td><b>취식률 25% → 7.1석·38㎡; 취식률 35% → 10.0석·53㎡; 취식률 50% → 14.2석·76㎡</b></td><td>좌석 = 피크 시간당 거래 × 취식률 × 1.5인 × 0.6시간 ÷ 0.85; 면적 = 좌석 × 1.6㎡ ÷ 0.30</td><td>설계 가정</td></tr><tr><th scope="row">존 면적 비율</th><td><b>오픈키친 30 / 진열·계산 22 / 커피바 13 / 좌석 30 / 백오피스 5 (%)</b></td><td>정성 배분(zones.why의 근거 수치 기반)</td><td>설계 가정</td></tr><tr><th scope="row">운영시간</th><td><b>06:30~21:00 (주 7일, 주말 축소 인력)</b></td><td>06~11시 합산매출 23.9% 확보 + 21~24시 2.8%·00~06시 1.7%는 제외</td><td>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20262</td></tr><tr><th scope="row">주의</th><td><b>상주·직장인구는 원천에서 값이 동결(상주 20234 이후, 직장 20244 이후)돼 규모 비교용으로만 사용, 증감 판단에는 미사용</b></td><td>-</td><td>서울시 상권분석서비스 상주인구 VwsmTrdarRepopQq, 20262 (20234 이후 값 동결); 서울시 상권분석서비스 직장인구 VwsmTrdarWrcPopltnQq, 20262 (20244 이후 값 동결)</td></tr><tr><th scope="row">데이터 없음</th><td><b>임대료, 실제 점포 면적·좌석 수 벤치마크, 아파트·소득소비 데이터(서울시 API 500 오류로 미수집)</b></td><td>-</td><td>location.json method.한계</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+
+<section id="menu" class="sec">
+  <div class="wrap">
+    <p class="sec-no">03 · 메뉴 구성</p>
+    <h2>음료 48 : 푸드 52 — 빵이 객단가를 끌어올린다</h2>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>카테고리 믹스 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <div class="zone-bar" role="img" aria-label="메뉴 카테고리 매출 비중"><i style="flex:38;background:#4C1D95" title="커피 38%"></i><i style="flex:10;background:#8B5CF6" title="음료(논커피) 10%"></i><i style="flex:32;background:#B45309" title="베이커리 32%"></i><i style="flex:10;background:#D97706" title="디저트 10%"></i><i style="flex:10;background:#0E7490" title="델리 10%"></i></div>
+        <ul class="mixlist"><li><span class="sw" style="background:#4C1D95"></span><b>커피 38%</b><span>원재료율 27.2% — 스타벅스(에스씨케이컴퍼니, 전 매장 직영) 원재료·상품 비율 27.2% 적용</span></li><li><span class="sw" style="background:#8B5CF6"></span><b>음료(논커피) 10%</b><span>원재료율 27.2% — 음료 카테고리 동일하게 스타벅스 27.2% 적용(공공데이터상 커피/논커피 구분 매출 데이터 없음)</span></li><li><span class="sw" style="background:#B45309"></span><b>베이커리 32%</b><span>원재료율 35.5% — 베이커리 제조·판매사 로쏘 주식회사 감사보고서 (매출원가−매출원가 배부 인건비 등)/매출 = 35.5% (원재료+기타제조경비 상한, 보수적 적용). 참고 하한: 엘비엠 19.5%</span></li><li><span class="sw" style="background:#D97706"></span><b>디저트 10%</b><span>원재료율 35.5% — 베이커리와 같은 제조 라인 → 로쏘 잔차비율 35.5% 적용</span></li><li><span class="sw" style="background:#0E7490"></span><b>델리 10%</b><span>원재료율 41.7% — 샌드위치 등 육가공·유제품 원재료 비중이 커 상한값인 CJ푸드빌 원재료·상품 비율 41.7% 적용(가맹 도매 포함으로 점포 원가보다 높게 잡힘)</span></li></ul>
+        <p class="note">상권 실적의 제과점 매출 비중은 26.6% <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span>. 상권은 커피 매출이 압도적이지만 커피 점포가 49→55곳으로 늘어 포화, 베이커리는 점포가 13→11곳으로 줄면서 매출이 늘어 점포당 매출 +53.1%(location.json) → 푸드계 비중을 상권 실적보다 높인 베이커리 주도 포맷(가정).</p>
+        <p class="note">공공데이터는 제과점/커피-음료 두 업종만 구분 → 커피·논커피, 베이커리·디저트·델리 세부 비중은 데이터 없음, 전부 가정</p>
+        <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 · DART CJ푸드빌 2025 감사보고서 비용의 성격별 분류, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a> · DART 로쏘 2025 감사보고서, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410000434" target="_blank" rel="noopener">20260410000434</a> · DART 에스씨케이컴퍼니 2025 감사보고서 비용의 성격별 분류, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></p>
+      </div>
+      <div class="card">
+        <h3>상권 객단가 추이와 제안 객단가</h3>
+        <div class="chart" style="height:250px"><canvas id="cTicket" aria-label="남부터미널역 객단가 추이"></canvas></div>
+        <p class="note">제과점 7,700원 → 9,309원(3년), 서울 전체 제과점 10,914원·커피 7,902원, 176상권 중앙값 제과점 10,472원·커피 7,528원 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></p>
+        <p class="note"><b>제안 객단가 7,200원</b> <span class="tag tag-a" title="전망·설계 가정">가정</span> — 1 / (음료계 비중 0.48 / 커피 객단가 5,773 + 푸드계 비중 0.52 / 제과점 객단가 9,309) = 7,194원 → 100원 반올림 7,200원 (매출가중 조화평균: 목표 믹스대로 팔릴 때 결제 1건당 평균액)</p>
+        <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20232~20262 (THSMON_SELNG_AMT / THSMON_SELNG_CO)</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>시간대별 히어로 메뉴</h3>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>시간대</th><th>합산 매출</th><th>베이커리</th><th>커피</th><th>히어로 <span class="tag tag-a" title="전망·설계 가정">가정</span></th><th>근거</th></tr></thead><tbody><tr><th scope="row">06~11 출근길</th><td>23.9%</td><td>22.1%</td><td>24.5%</td><td><b>모닝 세트(아메리카노 + 소금버터롤 또는 크루아상)</b></td><td>베이커리 매출의 오전 비중과 커피 오전 비중이 모두 20%대 → 커피+빵 결합 구매 유도</td></tr><tr><th scope="row">11~14 점심</th><td>36.3%</td><td>27.7%</td><td>39.4%</td><td><b>델리 샌드위치 + 커피 런치 콤보, 식후 아이스 아메리카노</b></td><td>커피 매출의 최대 피크(직장인구 21,560명, 주중 비중 81.4%) → 식사 대용 델리로 객단가 상향</td></tr><tr><th scope="row">14~17 오후</th><td>19.0%</td><td>20.6%</td><td>18.4%</td><td><b>조각 치즈케이크·휘낭시에 + 논커피 음료(말차라떼·밀크티)</b></td><td>베이커리 비중이 커피보다 높은 시간대 → 디저트·논커피로 커피 외 수요 흡수</td></tr><tr><th scope="row">17~21 퇴근길</th><td>16.4%</td><td>26.0%</td><td>12.9%</td><td><b>테이크아웃 식사빵(우유식빵·캄파뉴) — 17시 2차 굽기</b></td><td>베이커리 매출의 26.0%가 이 시간대(커피는 12.9%) → 매장 매출을 저녁까지 끌고 가는 빵 수요</td></tr><tr><th scope="row">21~24 심야</th><td>2.8%</td><td>3.7%</td><td>2.5%</td><td><b>없음(21시 마감 제안)</b></td><td>합산 매출 비중이 한 자릿수 초반 → 인건비 대비 실익 낮음(가정)</td></tr><tr><th scope="row">주말</th><td>18.6%</td><td>21.3%</td><td>17.6%</td><td><b>홀케이크·선물용 구움과자 박스(예약제)</b></td><td>베이커리 주말 비중(21.3%)이 커피(17.6%)보다 높고 베이커리 구매 60대 이상 비중 17.9% → 가족·선물 수요</td></tr></tbody></table></div>
+      <p class="note">시간대 비중은 해당 업종 분기 매출 중 시간대 매출 비중 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span>. 주말 행은 주말 매출 비중.</p>
+      <p class="src"><span>출처</span> 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262</p>
+    </div>
+
+    <div class="card">
+      <h3>메뉴판 <small>가격은 모두 제안 가정, 단위 원</small> <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+      <div class="menu-grid"><div class="menu-col"><h4>커피</h4><ul><li><span><b>아메리카노</b><small>기본 블렌드, 모닝 세트·런치 콤보의 베이스</small></span><em>4,300</em></li><li><span><b>카페라떼</b><small>우유 라떼, 30대 직장인 주력</small></span><em>4,900</em></li><li><span><b>콜드브루</b><small>점심 피크 대기 단축용 사전 추출</small></span><em>4,900</em></li><li><span><b>시그니처 흑임자 크림라떼</b><small>매장 시그니처, 디저트 동반 구매용</small></span><em>5,800</em></li></ul></div><div class="menu-col"><h4>음료(논커피)</h4><ul><li><span><b>말차 라떼</b><small>오후 시간대 논커피 대표</small></span><em>5,500</em></li><li><span><b>얼그레이 밀크티</b><small>디저트 페어링용</small></span><em>5,500</em></li><li><span><b>제철 과일 에이드</b><small>계절 한정, 주말·오후 수요</small></span><em>5,800</em></li></ul></div><div class="menu-col"><h4>베이커리</h4><ul><li><span><b>소금버터롤</b><small>출근길 그랩앤고 히어로, 하루 3회 굽기</small></span><em>3,200</em></li><li><span><b>버터 크루아상</b><small>모닝 세트 선택지</small></span><em>4,200</em></li><li><span><b>우유식빵(1봉)</b><small>퇴근길 테이크아웃 식사빵, 17시 2차 출고</small></span><em>5,800</em></li><li><span><b>통밀 캄파뉴</b><small>40~60대 식사빵 수요, 반 개 판매 병행</small></span><em>7,500</em></li></ul></div><div class="menu-col"><h4>디저트</h4><ul><li><span><b>바스크 치즈케이크(조각)</b><small>오후 히어로 디저트</small></span><em>6,500</em></li><li><span><b>휘낭시에 3종</b><small>선물 박스 구성용 구움과자</small></span><em>3,000</em></li><li><span><b>시즌 홀케이크(예약)</b><small>주말·기념일 예약 픽업</small></span><em>32,000</em></li></ul></div><div class="menu-col"><h4>델리</h4><ul><li><span><b>잠봉뵈르 샌드위치</b><small>자사 바게트 사용, 점심 대표</small></span><em>8,500</em></li><li><span><b>에그 샐러드 샌드위치</b><small>식빵 활용, 오전·점심 겸용</small></span><em>6,900</em></li><li><span><b>오늘의 수프 + 캄파뉴</b><small>점심 식사 대용, 쌀쌀한 계절 강화</small></span><em>9,500</em></li></ul></div><div class="menu-col"><h4>세트</h4><ul><li><span><b>모닝 세트(아메리카노+소금버터롤)</b><small>06~11시 한정</small></span><em>6,900</em></li><li><span><b>런치 콤보(샌드위치+아메리카노)</b><small>11~14시 한정</small></span><em>11,500</em></li></ul></div></div>
+      <p class="note">음료 단품 4,300~5,800원은 상권 커피 객단가 5,773원 이하. 음료 단품 최고가가 상권 커피 객단가 이하 → 1잔 구매 시 상권 평균 결제액 수준, 빵 동반 시 제안 객단가로 상향. 외부 시세는 인용하지 않았다.</p>
+      <p class="src"><span>출처</span> menu.json items (가격 = 제안 가정) · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20262 (상권 커피 객단가)</p>
+    </div>
+
+    <div class="card">
+      <h3>목표 원재료비율 32% <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+      <p class="formula">Σ(카테고리 매출비중 × 카테고리 원가율 가정) = 38%×27.2% + 10%×27.2% + 32%×35.5% + 10%×35.5% + 10%×41.7% = 32.1%</p>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>비교 기준</th><th>원재료비율</th><th>성격</th></tr></thead><tbody>
+      <tr><th scope="row">에스씨케이컴퍼니</th><td>27.2%</td><td>DART 2025 감사보고서 성격별 비용(원재료·상품) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr><tr><th scope="row">투썸플레이스</th><td>45.0%</td><td>DART 2025 감사보고서 성격별 비용(원재료·상품) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr><tr><th scope="row">CJ푸드빌</th><td>41.7%</td><td>DART 2025 감사보고서 성격별 비용(원재료·상품) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr><tr><th scope="row">이디야</th><td>60.0%</td><td>DART 2025 감사보고서 매출원가율(성격별 분류 미공시 → 원재료비율 상한) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr>
+      <tr><th scope="row">로쏘</th><td>35.5%</td><td>베이커리 제조사 잔차비율(상한/하한 참고) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr><tr><th scope="row">엘비엠</th><td>19.5%</td><td>베이커리 제조사 잔차비율(상한/하한 참고) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></td></tr>
+      </tbody></table></div>
+      <p class="note">직영 커피 중심 스타벅스 27.2%보다 높고, 가맹 공급 매출이 섞인 투썸 45.0%·CJ푸드빌 41.7%보다 낮은 범위. 베이커리 비중이 높아 스타벅스보다 원가가 높게 설계됨. 투썸·CJ는 가맹점에 원재료를 공급한 매출·원가가 포함돼 단일 직영점 원가율로 그대로 쓰기 어려움.</p>
+      <p class="note">손익 시뮬레이션은 더 보수적인 34.5%(스타벅스·CJ푸드빌 50:50)를 썼다. 메뉴 목표(32.1%)와의 차이 2.3%p는 04의 원재료비 −3%p 민감도로 확인할 수 있다.</p>
+      <p class="src"><span>출처</span> DART CJ푸드빌 2025 감사보고서 비용의 성격별 분류, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a> · DART 로쏘 2025 감사보고서, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410000434" target="_blank" rel="noopener">20260410000434</a> · DART 에스씨케이컴퍼니 2025 감사보고서 비용의 성격별 분류, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> · DART 엘비엠 2025 감사보고서, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000290" target="_blank" rel="noopener">20260326000290</a> · DART 이디야 2025 감사보고서 손익계산서 매출원가(성격별 분류 미공시), rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260409000094" target="_blank" rel="noopener">20260409000094</a> · DART 투썸플레이스 2025 감사보고서 비용의 성격별 분류, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">20260410001376</a></p>
+    </div>
+  </div>
+</section>
+
+
+<section id="pnl" class="sec alt">
+  <div class="wrap">
+    <p class="sec-no">04 · 손익 시뮬레이션</p>
+    <h2>기준 2년차 흑자 — 승부는 ‘상권 평균 대비 매출 배수’</h2>
+    <p class="lead dark">기준 매출은 남부터미널역 제과점 점포당 연매출 3.30억원 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span>, 비용은 전 매장 직영인 스타벅스(에스씨케이컴퍼니) 감사보고서의 매출 대비 비율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span>을 단일 매장에 적용했다. 시나리오·성장률·초기투자는 <span class="tag tag-a" title="전망·설계 가정">가정</span>.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>시나리오별 연매출 vs 손익분기 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <div class="chart" style="height:260px"><canvas id="cRev" aria-label="시나리오별 연매출과 손익분기 매출"></canvas></div>
+        <p class="src"><span>출처</span> pnl.json scenarios · breakeven</p>
+      </div>
+      <div class="card">
+        <h3>시나리오별 영업이익률 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <div class="chart" style="height:260px"><canvas id="cOpm" aria-label="시나리오별 영업이익률"></canvas></div>
+        <p class="src"><span>출처</span> pnl.json scenarios</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>3개 시나리오 손익 (연 단위) <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+      <div class="table-wrap"><table class="pnl"><thead><tr><th rowspan="2">단위: 억원</th><th scope="col" colspan="3">보수 <small>x0.8 · 연 3.9%</small></th><th scope="col" colspan="3">기준 <small>x1.0 · 연 5.8%</small></th><th scope="col" colspan="3">낙관 <small>x1.3 · 연 8.2%</small></th></tr><tr><th>Y1</th><th>Y2</th><th>Y3</th><th>Y1</th><th>Y2</th><th>Y3</th><th>Y1</th><th>Y2</th><th>Y3</th></tr></thead><tbody><tr><th scope="row">매출</th><td class="n">2.74</td><td class="n">2.85</td><td class="n">2.96</td><td class="n">3.49</td><td class="n">3.69</td><td class="n">3.90</td><td class="n">4.64</td><td class="n">5.02</td><td class="n">5.43</td></tr><tr><th scope="row">원재료비</th><td class="n">0.94</td><td class="n">0.98</td><td class="n">1.02</td><td class="n">1.20</td><td class="n">1.27</td><td class="n">1.34</td><td class="n">1.60</td><td class="n">1.73</td><td class="n">1.87</td></tr><tr><th scope="row">매출총이익</th><td class="n">1.80</td><td class="n">1.87</td><td class="n">1.94</td><td class="n">2.28</td><td class="n">2.42</td><td class="n">2.56</td><td class="n">3.04</td><td class="n">3.29</td><td class="n">3.56</td></tr><tr><th scope="row">인건비</th><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td><td class="n">1.07</td></tr><tr><th scope="row">임차료(+사용권상각)</th><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td><td class="n">0.47</td></tr><tr><th scope="row">기타(수수료·상각 등)</th><td class="n">0.72</td><td class="n">0.73</td><td class="n">0.74</td><td class="n">0.81</td><td class="n">0.83</td><td class="n">0.86</td><td class="n">0.95</td><td class="n">1.00</td><td class="n">1.05</td></tr><tr class="hl"><th scope="row">영업이익</th><td class="n neg">-0.46</td><td class="n neg">-0.40</td><td class="n neg">-0.35</td><td class="n neg">-0.07</td><td class="n">0.04</td><td class="n">0.15</td><td class="n">0.54</td><td class="n">0.74</td><td class="n">0.96</td></tr><tr class="hl"><th scope="row">영업이익률</th><td class="n neg">−16.8%</td><td class="n neg">−14.2%</td><td class="n neg">−11.7%</td><td class="n neg">−1.9%</td><td class="n">+1.1%</td><td class="n">+3.9%</td><td class="n">+11.7%</td><td class="n">+14.8%</td><td class="n">+17.7%</td></tr><tr><th scope="row">EBITDA</th><td class="n neg">-0.30</td><td class="n neg">-0.25</td><td class="n neg">-0.19</td><td class="n">0.09</td><td class="n">0.20</td><td class="n">0.31</td><td class="n">0.70</td><td class="n">0.90</td><td class="n">1.12</td></tr><tr class="hl"><th scope="row">3년 누적 영업이익</th><td colspan="3" class="n neg">-1.21억원</td><td colspan="3" class="n">0.13억원</td><td colspan="3" class="n">2.25억원</td></tr></tbody></table></div>
+      <p class="note">월평균 = 연/12. 기준 Y1 월매출 0.29억원, 월 영업이익 -0.01억원. 고정비는 3년간 명목 고정(임금·임대료 인상 데이터 없음). EBITDA = 영업이익 + 감가상각비(초기투자/5년) + 무형자산상각비(임차료·사용권상각은 현금성 점유비용으로 보고 가산하지 않음).</p>
+      <p class="src"><span>출처</span> scripts/pnl.py → pnl.json · DART 에스씨케이컴퍼니 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> · DART CJ푸드빌 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a> · 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010) 20253~20262 · 서울시 상권분석서비스 점포 VwsmTrdarStorQq 20262</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card accent">
+        <h3>손익분기 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <p class="big">3.61억원 <small>/ 년 · 월 0.30억원</small></p>
+        <ul class="list small">
+          <li>기준 Y1 매출의 103.6%, 상권 제과점 점포당 연매출의 109.6%</li>
+          <li>연 고정비 1.91억원 · 변동비율 47.1% · 공헌이익률 52.9%</li>
+        </ul>
+        <p class="formula">손익분기 매출 = 연 고정비 ÷ (1 − 변동비율). 고정비 = 기준 시나리오 Y1 매출 × (인건비+임차료+사용권자산상각비+수도광열비+기타비용+무형자산상각비 비율) + 초기투자/5년; 변동비율 = 원재료비(가중) + 지급수수료 + 소모품비</p>
+        <table class="grid small"><thead><tr><th>도달 여부</th><th>Y1</th><th>Y2</th><th>Y3</th></tr></thead><tbody><tr><th scope="row">보수</th><td class="neg">미달</td><td class="neg">미달</td><td class="neg">미달</td></tr><tr><th scope="row">기준</th><td class="neg">미달</td><td class="pos">도달</td><td class="pos">도달</td></tr><tr><th scope="row">낙관</th><td class="pos">도달</td><td class="pos">도달</td><td class="pos">도달</td></tr></tbody></table>
+        <p class="src"><span>출처</span> pnl.json breakeven · DART 에스씨케이컴퍼니 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></p>
+      </div>
+      <div class="card">
+        <h3>민감도 — 기준 시나리오 영업이익률 <span class="tag tag-a" title="전망·설계 가정">가정</span></h3>
+        <h4>Y1 매출 × 원재료비 그리드</h4>
+        <table class="grid"><thead><tr><th>매출 \ 원재료비</th><th>-3%p</th><th>0</th><th>+3%p</th></tr></thead><tbody><tr><th scope="row">-10%</th><td class="neg">−5.0%</td><td class="neg">−8.0%</td><td class="neg">−11.0%</td></tr><tr><th scope="row">0%</th><td class="pos">+1.1%</td><td class="neg base">−1.9%</td><td class="neg">−4.9%</td></tr><tr><th scope="row">+10%</th><td class="pos">+6.1%</td><td class="pos">+3.1%</td><td class="pos">+0.1%</td></tr></tbody></table>
+        <div class="table-wrap"><table class="plain"><thead><tr><th>변수</th><th>Y1</th><th>Y3</th></tr></thead><tbody>
+        <tr class="hl"><th scope="row">기준</th><td class="n">−1.9%</td><td class="n">+3.9%</td></tr>
+        <tr><th scope="row">매출 −10% / +10%</th><td class="n">−8.0% / +3.1%</td><td class="n">−1.5% / +8.4%</td></tr><tr><th scope="row">원재료비 +3%p / −3%p</th><td class="n">−4.9% / +1.1%</td><td class="n">+0.9% / +6.9%</td></tr><tr><th scope="row">지급수수료 10.0%로 치환(로열티 제외 근사)</th><td class="n">−0.04%</td><td class="n">+5.8%</td></tr><tr><th scope="row">초기투자 A_감가상각비역산 (0.68억원)</th><td class="n">−1.9%</td><td class="n">+3.9%</td></tr><tr><th scope="row">초기투자 B_유형자산취득원가/매출 (1.29억원)</th><td class="n">−5.4%</td><td class="n">+0.8%</td></tr><tr><th scope="row">초기투자 A×2(사용자입력 예시) (1.35억원)</th><td class="n">−5.8%</td><td class="n">+0.4%</td></tr></tbody></table></div>
+        <p class="note">투썸플레이스·CJ푸드빌 지급수수료/매출 중 낮은 값(로열티 지급 주석 없음). 스타벅스 11.8%와의 차이를 로열티 몫의 대리치로 본 경우.</p>
+        <p class="src"><span>출처</span> pnl.json sensitivity · DART 투썸플레이스 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">20260410001376</a> · DART CJ푸드빌 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>DART 비교사 원가구조 (매출 대비, 2025 감사보고서) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></h3>
+      <div class="chart" style="height:230px"><canvas id="cDart" aria-label="DART 비교사 비용의 성격별 분류 매출 대비 비율"></canvas></div>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>회사</th><th>매출</th><th>영업이익률</th><th>원재료·상품</th><th>인건비</th><th>점유비용</th><th>지급수수료</th><th>접수번호</th></tr></thead><tbody><tr><th scope="row">에스씨케이컴퍼니<small>스타벅스 (전 매장 직영)</small></th><td class="n">32,380억원</td><td class="n">5.3%</td><td class="n">27.2%</td><td class="n">30.8%</td><td class="n">13.4%</td><td class="n">11.8%</td><td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">투썸플레이스<small>투썸플레이스 (PE 보유, 가맹 중심)</small></th><td class="n">5,824억원</td><td class="n">6.2%</td><td class="n">45.0%</td><td class="n">19.1%</td><td class="n">2.0%</td><td class="n">10.0%</td><td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">20260410001376</a></td></tr><tr><th scope="row">CJ푸드빌<small>뚜레쥬르 등 (직영+가맹)</small></th><td class="n">7,928억원</td><td class="n">3.6%</td><td class="n">41.7%</td><td class="n">24.0%</td><td class="n">7.1%</td><td class="n">10.2%</td><td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a></td></tr><tr><th scope="row">이디야<small>이디야커피 (가맹 중심)</small></th><td class="n">2,387억원</td><td class="n">4.0%</td><td colspan="4">성격별 분류 미공시 — 매출원가 60.0% · 판관비 36.0%</td><td><a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260409000094" target="_blank" rel="noopener">20260409000094</a></td></tr></tbody></table></div>
+      <p class="note">점유비용 = 임차료 + 사용권자산상각비(IFRS16). 투썸·CJ푸드빌·이디야는 가맹점 공급 매출이 섞여 원재료율이 직영 매장보다 높게 나온다. 본 모델 비용률(기준 Y1 매출 대비 합계) 101.9%.</p>
+      <p class="src"><span>출처</span> DART 에스씨케이컴퍼니 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> (감사인 삼정회계법인) · DART 투썸플레이스 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">20260410001376</a> (감사인 삼일회계법인) · DART CJ푸드빌 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a> (감사인 삼정회계법인) · DART 이디야 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260409000094" target="_blank" rel="noopener">20260409000094</a> (감사인 예일회계법인)</p>
+    </div>
+
+    <details class="card fold">
+      <summary>손익 가정 13개 (값·근거·출처)</summary>
+      <div class="table-wrap"><table class="plain"><thead><tr><th>가정</th><th>값</th><th>근거</th><th>출처</th></tr></thead><tbody><tr><th scope="row">기준 연매출(제과점 점포당, 최근 4분기) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>3.30억원</b></td><td>제과점 추정매출 20253~20262 4개 분기 합 ÷ 20262 제과점 유사업종점포수(11). 베이커리 주도 복합 매장은 제과점 업종으로 분류된다는 가정. 4분기 합으로 계절성 제거.</td><td>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (CS100005·CS100010) 20253·20254·20261·20262, 서울시 상권분석서비스 점포 VwsmTrdarStorQq 20252·20262 (SIMILR_INDUTY_STOR_CO), 상권 남부터미널역 TRDAR_CD 3120175</td></tr><tr><th scope="row">시나리오 매출 배수 (가정) <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td class="n"><b>보수 x0.8 / 기준 x1.0 / 낙관 x1.3</b></td><td>보수 x0.8 / 기준 x1.0 / 낙관 x1.3 — 상권 제과점 점포당 평균 대비 신규 1호점 매출 수준. 근거 데이터 없음(가정).</td><td>가정</td></tr><tr><th scope="row">연 성장률 (가정) <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td class="n"><b>보수 3.90% / 기준 5.76% / 낙관 8.20%</b></td><td>보수 = location.json 보수 전망 적용성장률(0.5×min(2분기YoY중앙값,25%)+0.5×서울시장 CAGR3); 기준 = 기본 전망(합산 CAGR3×0.7); 낙관 = 합산 CAGR3 8.2% 그대로. Y1은 기준기간(2025Q3~2026Q2) 대비 1년 성장 적용.</td><td>location.json 3년후_전망; 서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq 20232→20262</td></tr><tr><th scope="row">원재료비율 (가정: 커피 50% : 베이커리 50% 가중) <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td class="n"><b>34.47%</b></td><td>스타벅스(에스씨케이) 0.2723 × 0.5 + CJ푸드빌(뚜레쥬르) 0.4172 × 0.5. 베이커리 주도 포맷이라 상권 실적 베이커리 비중(0.266)보다 높게 50%로 둠. 비교: 투썸 가중 시 0.3609, 상권 비중 가중 시 0.3108.</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a>; DART 2025 감사보고서 CJ푸드빌 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">20260403002488</a>; DART 2025 감사보고서 투썸플레이스 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">20260410001376</a></td></tr><tr><th scope="row">인건비율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>30.76%</b></td><td>스타벅스 종업원 관련 원가/매출 (전 매장 직영 구조). 고정비로 처리(기준 Y1 매출 기준 금액 고정).</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">임차료율(임차료+사용권자산상각비) <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>13.44%</b></td><td>임차료 0.0988 + 사용권자산상각비 0.0357. IFRS16상 리스료가 상각비로 분리되므로 합산해 점유비용으로 봄. 리스부채 이자 0.0042는 영업외라 제외. 임대료 공공데이터 없음.</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">지급수수료율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>11.82%</b></td><td>스타벅스 지급수수료/매출 그대로 사용. 감사보고서 주석 30(4)에 SBI Nevada와 상표·기술 라이센스 계약으로 &#x27;순매출액의 일정율&#x27; 로열티 지급이 확인되나 요율·금액 미공시 → 자체 브랜드 조정 불가, 그대로 두고 한계로 명시(비교군 치환 민감도 별도).</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> 주석 30(4)</td></tr><tr><th scope="row">소모품비율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>0.77%</b></td><td>변동비</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">수도광열비율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>1.75%</b></td><td>고정비</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">기타비용율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>4.30%</b></td><td>고정비(운반비·판촉비 등 포함)</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">무형자산상각비율 <span class="tag tag-r" title="공공데이터·DART 공시 실적">실적</span></th><td class="n"><b>0.70%</b></td><td>유무형자산상각비 − 유형자산감가상각비. 프랜차이즈권 상각(스타벅스 고유)이 포함될 수 있으나 분리 불가 → 보수적으로 포함.</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></td></tr><tr><th scope="row">초기투자(인테리어·설비) (역산 가정) <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td class="n"><b>0.68억원</b></td><td>스타벅스 유형자산감가상각비/매출 0.0388 × 내용연수 5년(정액법, 회계정책 주석) × 기준 Y1 매출. 정상상태에서 매장당 연 감가상각비×내용연수≈설비 취득원가라는 가정. 대안 B(유형자산 취득원가 합계/매출 0.3703) = 129,090,817원. 실제 견적은 사용자 입력 필요.</td><td>DART 2025 감사보고서 에스씨케이컴퍼니 rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a> 유형자산 변동표·회계정책 2-2-5</td></tr><tr><th scope="row">고정비 증가율 (가정) <span class="tag tag-a" title="전망·설계 가정">가정</span></th><td class="n"><b>0.00%</b></td><td>3년간 명목 고정 — 임대료 인상·임금 상승 공공데이터 없음(데이터 없음). 매출 성장분이 그대로 영업레버리지로 반영됨.</td><td>가정</td></tr></tbody></table></div>
+    </details>
+  </div>
+</section>
+
+
+<section id="rent" class="sec">
+  <div class="wrap">
+    <p class="sec-no">04-B · 임대료 게이트 <span class="badge">가정</span></p>
+    <h2>출점 조건: 기준 시나리오 기준 월 임대료 335만 원 이하 매물이어야 1년차 손익분기</h2>
+    <p class="lead">임대료는 입지 점수에 반영하지 못했습니다. 연결된 공공데이터·공시에 상가 임대료가 없기 때문입니다. 대신 손익에서 이 매장이 감당할 수 있는 월 임대료 상한을 역산했습니다. 실제 매물 임대료가 이 상한을 넘으면 남부터미널역 결론은 재검토 대상입니다.</p>
+    <div class="table-wrap"><table class="cmp"><thead><tr><th>시나리오</th><th>연매출</th><th>모델 월 임차료</th><th>손익분기 상한</th><th>이익률 10% 유지 상한</th></tr></thead><tbody><tr><th scope="row">보수 Y1</th><td>2.74억 원</td><td>391만 원</td><td><b>6만 원</b></td><td>감당 불가</td></tr><tr><th scope="row">보수 Y3</th><td>2.96억 원</td><td>391만 원</td><td><b>102만 원</b></td><td>감당 불가</td></tr><tr><th scope="row">기준 Y1</th><td>3.49억 원</td><td>391만 원</td><td><b>335만 원</b></td><td>45만 원</td></tr><tr><th scope="row">기준 Y3</th><td>3.90억 원</td><td>391만 원</td><td><b>518만 원</b></td><td>193만 원</td></tr><tr><th scope="row">낙관 Y1</th><td>4.64억 원</td><td>391만 원</td><td><b>843만 원</b></td><td>456만 원</td></tr><tr><th scope="row">낙관 Y3</th><td>5.43억 원</td><td>391만 원</td><td><b>1,192만 원</b></td><td>740만 원</td></tr></tbody></table></div>
+    <p class="src"><span>출처</span> 월 임대료 상한 = (모델 임차료 + 영업이익 − 목표이익) / 12. 모델 임차료는 DART 스타벅스 매출 대비 점유비용 13.4% (rcpNo 20260406003256) 기준. 남부터미널역 실제 상가 임대료는 연결된 공공데이터(서울 열린데이터광장)·DART에 없음 → 실제 매물 임대료를 이 상한과 비교해 출점 여부를 결정해야 함. 계산: scripts/rent_gate.py</p>
+  </div>
+</section>
+
+<section id="sources" class="sec">
+  <div class="wrap">
+    <p class="sec-no">데이터 출처 · 한계</p>
+    <h2>숫자는 두 곳에서만 왔다</h2>
+    <div class="grid-2">
+      <div class="card">
+        <h3>서울 열린데이터광장 (서울시 상권분석서비스 외)</h3>
+        <ul class="srclist"><li><b>서울시 상권분석서비스 추정매출 VwsmTrdarSelngQq (제과점 CS100005·커피-음료 CS100010), 20232·20242·20252·20253·20254·20261·20262</b><span>서울 열린데이터광장 · 용도 sales</span></li><li><b>서울시 상권분석서비스 점포 VwsmTrdarStorQq, 20232·20242·20252·20262</b><span>서울 열린데이터광장 · 용도 store</span></li><li><b>서울시 상권분석서비스 길단위 유동인구 VwsmTrdarFlpopQq, 20232·20242·20252·20262</b><span>서울 열린데이터광장 · 용도 flpop</span></li><li><b>서울시 상권분석서비스 상주인구 VwsmTrdarRepopQq (전 분기)</b><span>서울 열린데이터광장 · 용도 repop</span></li><li><b>서울시 상권분석서비스 직장인구 VwsmTrdarWrcPopltnQq (전 분기)</b><span>서울 열린데이터광장 · 용도 wrc</span></li><li><b>서울시 상권분석서비스 집객시설 VwsmTrdarFcltyQq (최신 공표분기)</b><span>서울 열린데이터광장 · 용도 fclty</span></li><li><b>서울시 상권분석서비스 상권변화지표 VwsmTrdarIxQq, 20262</b><span>서울 열린데이터광장 · 용도 ix</span></li><li><b>서울시 상권분석서비스 상권영역 TbgisTrdarRelm</b><span>서울 열린데이터광장 · 용도 area</span></li><li><b>서울시 지하철 호선별 역별 승하차 인원 CardSubwayStatsNew, 2026-11-02~2026-11-08 (1주)</b><span>서울 열린데이터광장 · 용도 subway</span></li><li><b>data/interim/trdar_scores.csv, data/interim/analysis.json</b><span>가공 · 용도 scripts/analyze.py v2 산출</span></li></ul>
+        <p class="note">비교는 모두 2분기끼리(3년전 20232, 1년전 20252, 최신 20262)로 계절성을 통제. 아파트·소득소비 상권 API는 서울시 서버 500 오류로 미수집(데이터 없음).</p>
+      </div>
+      <div class="card">
+        <h3>DART 전자공시 (감사보고서)</h3>
+        <ul class="srclist"><li><b>에스씨케이컴퍼니</b> 스타벅스 (전 매장 직영) · 2025 감사보고서 · 감사인 삼정회계법인 · <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">rcpNo 20260406003256</a></li><li><b>투썸플레이스</b> 투썸플레이스 (PE 보유, 가맹 중심) · 2025 감사보고서 · 감사인 삼일회계법인 · <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410001376" target="_blank" rel="noopener">rcpNo 20260410001376</a></li><li><b>CJ푸드빌</b> 뚜레쥬르 등 (직영+가맹) · 2025 감사보고서 · 감사인 삼정회계법인 · <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260403002488" target="_blank" rel="noopener">rcpNo 20260403002488</a></li><li><b>이디야</b> 이디야커피 (가맹 중심) · 2025 감사보고서 · 감사인 예일회계법인 · <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260409000094" target="_blank" rel="noopener">rcpNo 20260409000094</a></li><li>DART 로쏘 2025 감사보고서, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260410000434" target="_blank" rel="noopener">20260410000434</a> — 메뉴 원재료율 참고</li><li>DART 엘비엠 2025 감사보고서, rcept_no <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260326000290" target="_blank" rel="noopener">20260326000290</a> — 메뉴 원재료율 참고</li></ul>
+        <p class="note">비용의 성격별 분류 주석 항목합 = 공시 비용합계 검증 완료. 원문 행 텍스트는 data/interim/audit_*.txt.</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>한계</h3>
+      <div class="grid-2 lim"><div><h4>입지</h4><ul class="list small"><li>임대료 공공데이터 없음 → 상권 간 비용 차이 비교 불가. 임차료는 DART 감사보고서 매출 대비 비율로만 추정.</li><li>아파트·소득소비 상권 API는 서울시 서버 500 오류로 미수집(데이터 없음).</li><li>상주인구는 20234 이후, 직장인구는 20244 이후 값이 동결돼(원천에서 마지막으로 값이 바뀐 분기 기준) 배후인구 증감은 점수에서 제외(참고 표시만).</li><li>추정매출은 카드 결제 기반 추정치로 소수 점포 상권은 마스킹·고정값 가능성이 있음(마스킹 의심 감점으로 일부 보정).</li><li>관광특구는 발달상권과 영역이 중복될 수 있어 같은 매출이 두 번 집계될 수 있음.</li><li>지하철 승하차는 2026-11-02~08 1주치만 수집(과거분 API 미제공) → 추세 분석 불가. 상권 내 지하철역 수는 경계 안만 집계.</li><li>3년후 전망은 과거 성장률 외삽 &#x27;가정&#x27;이며 실제 신규 매장 매출이 아님.</li></ul></div><div><h4>메뉴</h4><ul class="list small"><li>추정매출은 카드 결제 기반 추정치로 1건에 여러 품목이 포함될 수 있음(품목 단가 아님).</li><li>공공데이터에 품목·카테고리별 매출, 메뉴 가격 데이터 없음 → 메뉴 가격과 세부 믹스는 모두 제안 가정.</li><li>DART 원재료비율은 회사 전체(가맹 공급·상품 판매 포함) 기준으로 단일 매장 원가와 다를 수 있음.</li></ul></div><div><h4>손익</h4><ul class="list small"><li>점포당 추정매출은 카드결제 기반 상권 평균이며 실제 신규 매장 매출이 아님. 제과점 점포수 11곳 소수 표본(마스킹·고정값 가능성).</li><li>기준 매출은 제과점 업종 점포당 평균만 사용(베이커리 주도 복합 매장 가정). 커피 단독 점포당 연매출은 참고값으로만 제시.</li><li>비용 비율은 회사 전체(본사 관리비 포함) 감사보고서 수치로 매장 단위 손익과 다름. 1개 매장 회사는 본사비 부담률이 더 클 수 있음.</li><li>원재료비 비교군(CJ푸드빌·투썸)은 가맹점 공급 상품 매출이 섞여 원재료율이 직영 매장보다 높게 나올 수 있음 → 베이커리 쪽 원재료비는 보수적(상한)일 가능성.</li><li>스타벅스 지급수수료(11.8%)에 로열티가 포함됨을 주석으로 확인했으나 요율 미공시로 분리 불가 → 자체 브랜드엔 비용 과대일 수 있음(비교군 치환 민감도 참고).</li><li>임대료 공공데이터 없음: 서초권 실제 임차료와 다를 수 있음. 리스부채 이자(매출의 0.42%)는 영업이익 아래라 제외.</li><li>초기투자는 공공·공시 데이터가 없어 DART 감가상각비로 역산한 가정치이며 인테리어 견적·보증금·권리금은 포함하지 않음(사용자 입력 필요).</li><li>오픈 초기 매출 램프업, 임금·임대료 인상, 법인세·이자 등 영업외 항목은 데이터 없음으로 반영하지 않음.</li><li>고정비를 기준 시나리오 Y1 매출 × 스타벅스 비율로 잡았으므로 기준 시나리오의 손익분기 판단은 비율 구조에 좌우됨.</li></ul></div><div><h4>인테리어</h4><ul class="list small"><li>상주·직장인구는 원천에서 값이 동결(상주 20234 이후, 직장 20244 이후)돼 규모 비교용으로만 사용, 증감 판단에는 미사용</li><li>임대료, 실제 점포 면적·좌석 수 벤치마크, 아파트·소득소비 데이터(서울시 API 500 오류로 미수집)</li></ul></div></div>
+      <p class="src"><span>출처</span> location.json method.한계 · menu.json 한계 · pnl.json limitations · interior.json assumptions · DART 에스씨케이컴퍼니 <a href="https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260406003256" target="_blank" rel="noopener">20260406003256</a></p>
+    </div>
+    <p class="note">재현: scripts/analyze.py → build_location.py → build_interior.py · build_menu.py · pnl.py → build_site.py (이 페이지). 생성일 2026-11-14.</p>
+  </div>
+</section>
+
+
+<section id="video" class="sec alt">
+  <div class="wrap">
+    <p class="sec-no">발표 영상</p>
+    <h2>2분 요약 발표</h2>
+    <div class="video-frame">
+      <video controls preload="metadata" playsinline aria-label="2분 발표 영상">
+        <source src="assets/presentation.mp4" type="video/mp4">
+        <track kind="captions" src="assets/captions.vtt" srclang="ko" label="한국어" default>
+      </video>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer><div class="wrap">본 페이지의 모든 수치는 scripts/build_site.py가 data/interim/*.json에서 생성했습니다. ‘가정’ 배지가 붙은 값은 전망·설계 가정이며 공시 실적이 아닙니다.</div></footer>
+<script>window.__DATA__ = {"seoulTrend": {"labels": ["23Q2", "24Q2", "25Q2", "25Q3", "25Q4", "26Q1", "26Q2"], "bakIdx": [100.0, 101.0, 100.5, 103.9, 109.2, 104.2, 104.3], "cofIdx": [100.0, 102.6, 98.1, 102.2, 95.5, 90.6, 101.4], "bakRaw": [1919.0, 1937.5, 1928.5, 1994.6, 2094.6, 2000.3, 2002.4], "cofRaw": [7186.2, 7374.2, 7046.3, 7346.6, 6864.3, 6513.8, 7285.8]}, "cands": {"labels": ["23Q2", "24Q2", "25Q2", "25Q3", "25Q4", "26Q1", "26Q2"], "series": [{"name": "남부터미널역", "data": [28.51, 28.71, 30.76, 32.23, 29.45, 32.8, 36.14]}, {"name": "연희동", "data": [25.3, 27.18, 27.98, 29.89, 31.56, 28.83, 29.15]}, {"name": "동대문역사문화공원역", "data": [26.86, 32.86, 32.69, 40.22, 31.69, 29.25, 37.7]}]}, "scatter": {"all": [{"x": 5.27, "y": 0.2231, "n": "이화사거리"}, {"x": 10.1, "y": 0.1902, "n": "서울시청"}, {"x": 21.82, "y": 0.1787, "n": "강남 마이스 관광특구"}, {"x": 8.38, "y": 0.174, "n": "삼전역 1번"}, {"x": 10.5, "y": 0.1606, "n": "종로3가역"}, {"x": 18.84, "y": 0.1432, "n": "동대문패션타운 관광특구"}, {"x": 1.0, "y": 0.1363, "n": "광화문역"}, {"x": 3.61, "y": 0.1305, "n": "구로역"}, {"x": 5.85, "y": 0.1136, "n": "명동 남대문 북창동 다동 무교동 관광특구"}, {"x": 1.48, "y": 0.1079, "n": "명동(명동거리)"}, {"x": 8.99, "y": 0.1027, "n": "합정역"}, {"x": 8.03, "y": 0.096, "n": "목동신시가지"}, {"x": 1.02, "y": 0.0923, "n": "신촌역(신촌역, 신촌로터리)"}, {"x": 10.96, "y": 0.0891, "n": "을지로3가역"}, {"x": 3.9, "y": 0.0763, "n": "코엑스"}, {"x": 12.44, "y": 0.0729, "n": "성수역"}, {"x": 5.28, "y": 0.0649, "n": "내방역"}, {"x": -3.01, "y": 0.0628, "n": "연남동(홍대)"}, {"x": 4.99, "y": 0.0609, "n": "강변역(테크노마트)"}, {"x": -1.52, "y": 0.0607, "n": "압구정역"}, {"x": 12.02, "y": 0.054, "n": "영등포역(영등포)"}, {"x": 10.05, "y": 0.0482, "n": "쌍문역1번(쌍리단길)"}, {"x": 0.67, "y": 0.047, "n": "공릉역"}, {"x": 4.45, "y": 0.0377, "n": "구로디지털단지"}, {"x": 26.29, "y": 0.0376, "n": "발산역(마곡)"}, {"x": -2.3, "y": 0.0368, "n": "방배역"}, {"x": 0.88, "y": 0.036, "n": "등촌역"}, {"x": 9.99, "y": 0.0344, "n": "북창동(시청역_6번)"}, {"x": 1.59, "y": 0.0341, "n": "충무로역"}, {"x": -0.21, "y": 0.0316, "n": "을지로입구역"}, {"x": 0.35, "y": 0.0253, "n": "아차산역"}, {"x": 24.46, "y": 0.0252, "n": "홍대땡땡거리"}, {"x": 12.22, "y": 0.0181, "n": "길동역"}, {"x": -3.16, "y": 0.0117, "n": "배화여자대학교(박노수미술관)"}, {"x": 26.67, "y": 0.0086, "n": "쌍문역동측상점가"}, {"x": 0.41, "y": 0.007, "n": "장안동사거리"}, {"x": 8.46, "y": 0.0052, "n": "여의도역(여의도)"}, {"x": 17.59, "y": 0.0036, "n": "연희대우아파트앞"}, {"x": 16.94, "y": 0.0013, "n": "성수동카페거리"}, {"x": -2.74, "y": -0.0, "n": "이화여대 3,5,7길 상점가"}, {"x": 5.48, "y": -0.0009, "n": "장지역(가든파이브)"}, {"x": 5.44, "y": -0.0027, "n": "수서역"}, {"x": -2.03, "y": -0.0054, "n": "장한평역(장한평)"}, {"x": -0.01, "y": -0.0065, "n": "잠실새내역(신천)"}, {"x": -7.3, "y": -0.007, "n": "구로디지털단지역"}, {"x": -4.88, "y": -0.0085, "n": "노량진역(노량진)"}, {"x": 0.31, "y": -0.01, "n": "대치역"}, {"x": 10.36, "y": -0.013, "n": "구로전화국"}, {"x": 0.83, "y": -0.0131, "n": "마들역"}, {"x": -1.02, "y": -0.0132, "n": "홍대입구역(홍대)"}, {"x": 2.26, "y": -0.0189, "n": "역삼역"}, {"x": -0.55, "y": -0.0209, "n": "고덕역"}, {"x": 14.0, "y": -0.0254, "n": "천호역"}, {"x": -6.24, "y": -0.0291, "n": "이태원(이태원역)"}, {"x": 4.34, "y": -0.0311, "n": "강남구청역"}, {"x": 1.48, "y": -0.0322, "n": "학동사거리"}, {"x": -1.2, "y": -0.0324, "n": "목동역 8번출구"}, {"x": -2.5, "y": -0.033, "n": "건대입구역(건대)"}, {"x": 2.39, "y": -0.0407, "n": "잠실역"}, {"x": -0.31, "y": -0.0415, "n": "강남역"}, {"x": -4.49, "y": -0.0429, "n": "이태원 관광특구"}, {"x": -2.47, "y": -0.047, "n": "군자역"}, {"x": 27.71, "y": -0.0489, "n": "신정네거리역"}, {"x": -5.05, "y": -0.0519, "n": "서울역"}, {"x": 1.91, "y": -0.0558, "n": "화곡역"}, {"x": -0.08, "y": -0.0569, "n": "약수역"}, {"x": 1.09, "y": -0.0592, "n": "당산2동(영등포우체국)"}, {"x": -17.29, "y": -0.0604, "n": "삼청동"}, {"x": 2.0, "y": -0.0614, "n": "안암역"}, {"x": -0.25, "y": -0.0654, "n": "잠실 관광특구"}, {"x": -1.95, "y": -0.0664, "n": "논현역"}, {"x": -3.69, "y": -0.0667, "n": "양재역"}, {"x": 4.57, "y": -0.0668, "n": "명일역"}, {"x": -1.95, "y": -0.068, "n": "어린이대공원역"}, {"x": 6.43, "y": -0.0694, "n": "서대문역"}, {"x": -4.47, "y": -0.072, "n": "신사역"}, {"x": -8.58, "y": -0.0742, "n": "이화여대(이대역, 이대)"}, {"x": -9.28, "y": -0.0751, "n": "양재시민의숲역(양재동꽃시장, aT센터)"}, {"x": -0.07, "y": -0.0753, "n": "방배동카페골목"}, {"x": 20.47, "y": -0.0772, "n": "북촌(안국역)"}, {"x": -3.75, "y": -0.0783, "n": "서초3동사거리"}, {"x": 17.97, "y": -0.08, "n": "망원역"}, {"x": -2.8, "y": -0.0835, "n": "총신대입구역(이수, 총신대)"}, {"x": -0.52, "y": -0.0836, "n": "서강대역 1번"}, {"x": 9.93, "y": -0.0849, "n": "가락시장역"}, {"x": 1.3, "y": -0.0853, "n": "명지대학교"}, {"x": -3.14, "y": -0.087, "n": "보라매공원"}, {"x": 3.91, "y": -0.088, "n": "서초역"}, {"x": -0.96, "y": -0.0908, "n": "시청역_8번"}, {"x": -5.46, "y": -0.0916, "n": "회기역"}, {"x": -2.93, "y": -0.0917, "n": "삼성중앙역"}, {"x": 2.14, "y": -0.0918, "n": "교대역(법원.검찰청)"}, {"x": -7.78, "y": -0.0928, "n": "상계역"}, {"x": -4.67, "y": -0.1002, "n": "성신여대"}, {"x": -1.02, "y": -0.101, "n": "삼성역"}, {"x": 6.32, "y": -0.1015, "n": "독산동"}, {"x": -5.1, "y": -0.1016, "n": "방이시장"}, {"x": -6.2, "y": -0.1028, "n": "한티역"}, {"x": 56.05, "y": -0.103, "n": "한강진역 3번"}, {"x": -4.27, "y": -0.1041, "n": "사당역(사당)"}, {"x": -13.16, "y": -0.1044, "n": "노원역"}, {"x": -3.78, "y": -0.1048, "n": "중부경찰서(영화인의거리)"}, {"x": 4.22, "y": -0.1072, "n": "올림픽대교북단"}, {"x": -2.27, "y": -0.1078, "n": "대학로(혜화역)"}, {"x": -1.01, "y": -0.1085, "n": "인사동"}, {"x": 0.17, "y": -0.1087, "n": "신용산역(용산역)"}, {"x": -4.15, "y": -0.1096, "n": "신내1동주민센터"}, {"x": -13.89, "y": -0.1096, "n": "선유도역 1번"}, {"x": 0.8, "y": -0.1115, "n": "종로·청계 관광특구"}, {"x": 6.83, "y": -0.1121, "n": "세종마을음식문화거리(금천교시장)"}, {"x": 0.44, "y": -0.1152, "n": "등나무근린공원"}, {"x": -6.59, "y": -0.1161, "n": "상수역(홍대)"}, {"x": -4.94, "y": -0.1176, "n": "가산디지털단지"}, {"x": 4.34, "y": -0.1194, "n": "송파나루역 1번(송리단길)"}, {"x": -6.98, "y": -0.1217, "n": "서촌(경복궁역)"}, {"x": -2.06, "y": -0.1251, "n": "창동역"}, {"x": -0.67, "y": -0.1254, "n": "서래마을카페거리(서래마을)"}, {"x": -4.56, "y": -0.1324, "n": "영등포구청역"}, {"x": 5.14, "y": -0.1349, "n": "상봉역"}, {"x": 0.43, "y": -0.1351, "n": "남대문시장(자유상가)"}, {"x": -6.17, "y": -0.1395, "n": "구의역"}, {"x": -2.64, "y": -0.1467, "n": "방화역 1번"}, {"x": -13.02, "y": -0.1474, "n": "서울대입구역"}, {"x": -1.22, "y": -0.1489, "n": "청담사거리(청담동명품거리)"}, {"x": -7.52, "y": -0.1524, "n": "우장산역 4번"}, {"x": 20.77, "y": -0.1544, "n": "한남오거리"}, {"x": -5.29, "y": -0.1555, "n": "녹두거리(대학동)"}, {"x": -0.75, "y": -0.1557, "n": "미아역"}, {"x": 1.37, "y": -0.161, "n": "연신내역"}, {"x": -2.56, "y": -0.1621, "n": "공덕역(공덕오거리)"}, {"x": -12.15, "y": -0.1637, "n": "숙대입구"}, {"x": -6.13, "y": -0.1646, "n": "뚝섬역"}, {"x": -7.15, "y": -0.1657, "n": "석촌역(석촌호수)"}, {"x": -4.31, "y": -0.1665, "n": "신논현역"}, {"x": -0.8, "y": -0.1703, "n": "홍대 걷고싶은 거리"}, {"x": -7.93, "y": -0.1717, "n": "상암동상점가"}, {"x": -8.69, "y": -0.1787, "n": "신대방삼거리역"}, {"x": -1.6, "y": -0.1803, "n": "둔촌역"}, {"x": 2.1, "y": -0.185, "n": "명동역(명동재미로)"}, {"x": -9.27, "y": -0.1957, "n": "수유역"}, {"x": 3.38, "y": -0.1961, "n": "국회의사당역(국회의사당)"}, {"x": -5.91, "y": -0.2036, "n": "신당역"}, {"x": -6.36, "y": -0.2055, "n": "시청역_1번"}, {"x": 2.21, "y": -0.2079, "n": "경의선책거리"}, {"x": -10.58, "y": -0.2105, "n": "사가정역"}, {"x": 4.25, "y": -0.2127, "n": "응암역"}, {"x": -8.41, "y": -0.2166, "n": "강남을지병원"}, {"x": -13.9, "y": -0.2191, "n": "신림역(신림)"}, {"x": 3.25, "y": -0.2205, "n": "강동구청역"}, {"x": 0.23, "y": -0.2205, "n": "도화동 상점가"}, {"x": 3.55, "y": -0.227, "n": "은마아파트"}, {"x": -9.38, "y": -0.2288, "n": "뱅뱅사거리"}, {"x": -14.81, "y": -0.2353, "n": "가로수길"}, {"x": -19.31, "y": -0.2395, "n": "압구정로데오역(압구정로데오)"}, {"x": -1.48, "y": -0.2401, "n": "매봉역"}, {"x": -16.94, "y": -0.2409, "n": "석촌고분역"}, {"x": 2.09, "y": -0.2487, "n": "구로구청"}, {"x": -7.28, "y": -0.2497, "n": "종각역"}, {"x": -7.78, "y": -0.25, "n": "연신내상점가(연빛거리)"}, {"x": -20.01, "y": -0.2502, "n": "홍대소상공인상점가"}, {"x": -9.16, "y": -0.2542, "n": "오목교역"}, {"x": -10.9, "y": -0.2627, "n": "DMC(디지털미디어시티)"}, {"x": -9.47, "y": -0.2636, "n": "문정역"}, {"x": -4.89, "y": -0.2654, "n": "포이사거리(삼호물산)"}, {"x": -14.76, "y": -0.2808, "n": "경희대학교(경희대)"}, {"x": -7.62, "y": -0.3097, "n": "망리단길"}, {"x": 8.88, "y": -0.3159, "n": "삼호가든사거리"}, {"x": 2.86, "y": -0.3217, "n": "선릉역"}, {"x": -5.07, "y": -0.3492, "n": "신설동역"}, {"x": 1.6, "y": -0.3746, "n": "장충동족발거리(남소영길)"}, {"x": -11.94, "y": -0.4048, "n": "미아사거리역"}, {"x": -9.99, "y": -0.4175, "n": "마포역"}, {"x": -12.62, "y": -0.4352, "n": "도곡1동"}], "cands": [{"x": 4.18, "y": 0.2092, "n": "연희동"}, {"x": 7.12, "y": 0.1972, "n": "남부터미널역"}, {"x": 15.34, "y": 0.1645, "n": "동대문역사문화공원역"}]}, "ticket": {"labels": ["23Q2", "24Q2", "25Q2", "25Q3", "25Q4", "26Q1", "26Q2"], "bak": [7700, 8080, 8855, 9057, 9535, 10077, 9309], "cof": [5332, 5616, 5887, 5892, 5926, 6140, 5773], "all": [5796, 6156, 6434, 6447, 6657, 6985, 6421], "proposal": 7200}, "scen": {"labels": ["Y1", "Y2", "Y3"], "names": ["보수", "기준", "낙관"], "rev": {"보수": [2.74, 2.85, 2.96], "기준": [3.49, 3.69, 3.9], "낙관": [4.64, 5.02, 5.43]}, "opm": {"보수": [-16.8, -14.2, -11.7], "기준": [-1.9, 1.1, 3.9], "낙관": [11.7, 14.8, 17.7]}, "be": 3.61}, "dart": {"labels": ["에스씨케이컴퍼니 (스타벅스)", "투썸플레이스 (투썸플레이스)", "CJ푸드빌 (뚜레쥬르 등)"], "cats": ["원재료·상품", "인건비", "점유비용(임차료+사용권자산상각)", "지급수수료", "유무형자산상각비", "기타(운반·판촉·수도광열 등)", "영업이익"], "values": {"원재료·상품": [27.2, 45.0, 41.7], "인건비": [30.8, 19.1, 24.0], "점유비용(임차료+사용권자산상각)": [13.4, 2.0, 7.1], "지급수수료": [11.8, 10.0, 10.2], "유무형자산상각비": [4.6, 11.3, 2.3], "기타(운반·판촉·수도광열 등)": [6.8, 6.4, 11.2], "영업이익": [5.3, 6.2, 3.6]}}};</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+  const D = window.__DATA__;
+  if (!window.Chart) { document.querySelectorAll('.chart').forEach(c=>c.insertAdjacentHTML('beforeend','<p class="note">차트 라이브러리를 불러오지 못했습니다. 표의 수치를 참고하세요.</p>')); return; }
+  const css = getComputedStyle(document.documentElement);
+  const v = n => css.getPropertyValue(n).trim();
+  Chart.defaults.font.family = '"Pretendard Variable", Pretendard, "Malgun Gothic", sans-serif';
+  Chart.defaults.color = v('--ink2');
+  Chart.defaults.borderColor = v('--line');
+  Chart.defaults.plugins.legend.labels.boxWidth = 10;
+  Chart.defaults.plugins.legend.labels.usePointStyle = true;
+  Chart.defaults.maintainAspectRatio = false;
+  const P = {deep:'#4C1D95', main:'#7C3AED', light:'#C4B5FD', teal:'#0E7490', amber:'#B45309', slate:'#94A3B8'};
+  const fmt = (x,d=1) => x.toLocaleString('ko-KR',{minimumFractionDigits:d,maximumFractionDigits:d});
+
+  const s = D.seoulTrend;
+  new Chart(document.getElementById('cSeoul'), {type:'line', data:{labels:s.labels, datasets:[
+    {label:'제과점', data:s.bakIdx, borderColor:P.main, backgroundColor:P.main, tension:.25, pointRadius:3, raw:s.bakRaw},
+    {label:'커피-음료', data:s.cofIdx, borderColor:P.teal, backgroundColor:P.teal, borderDash:[5,4], tension:.25, pointRadius:3, raw:s.cofRaw}]},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${fmt(c.parsed.y)} (${fmt(c.dataset.raw[c.dataIndex])}억원)`}}},
+      scales:{y:{title:{display:true,text:'지수'}}}}});
+
+  const sc = D.scatter;
+  new Chart(document.getElementById('cScatter'), {type:'scatter', data:{datasets:[
+    {label:'후보 3곳', data:sc.cands, backgroundColor:P.main, borderColor:P.deep, pointRadius:7, pointHoverRadius:9},
+    {label:'기타 상권', data:sc.all, backgroundColor:'rgba(148,163,184,.45)', pointRadius:3.5}]},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.raw.n}: YoY 중앙값 ${fmt(c.raw.x)}%, 점수 ${c.raw.y.toFixed(3)}`}}},
+      scales:{x:{title:{display:true,text:'2분기 YoY 중앙값(%)'}}, y:{title:{display:true,text:'v2 점수'}}}}});
+
+  const cd = D.cands, cc=[P.main,P.teal,P.amber], dash=[[],[6,4],[2,3]];
+  new Chart(document.getElementById('cCands'), {type:'line', data:{labels:cd.labels, datasets:cd.series.map((x,i)=>({
+    label:x.name, data:x.data, borderColor:cc[i], backgroundColor:cc[i], borderWidth:i===0?3:2, borderDash:dash[i], pointRadius:i===0?4:3, tension:.2}))},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${fmt(c.parsed.y,2)}억원`}}}, scales:{y:{title:{display:true,text:'억원'}}}}});
+
+  const t = D.ticket;
+  new Chart(document.getElementById('cTicket'), {type:'line', data:{labels:t.labels, datasets:[
+    {label:'제과점', data:t.bak, borderColor:P.main, backgroundColor:P.main, tension:.2},
+    {label:'커피-음료', data:t.cof, borderColor:P.teal, backgroundColor:P.teal, borderDash:[5,4], tension:.2},
+    {label:'합산', data:t.all, borderColor:P.slate, backgroundColor:P.slate, tension:.2},
+    {label:'제안 객단가(가정)', data:t.labels.map(()=>t.proposal), borderColor:P.amber, borderDash:[3,3], pointRadius:0, borderWidth:2}]},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${c.parsed.y.toLocaleString('ko-KR')}원`}}}, scales:{y:{title:{display:true,text:'원'}}}}});
+
+  const sn = D.scen, scol={'보수':P.light,'기준':P.main,'낙관':P.deep};
+  new Chart(document.getElementById('cRev'), {data:{labels:sn.labels, datasets:[
+    ...sn.names.map(n=>({type:'bar', label:n, data:sn.rev[n], backgroundColor:scol[n], borderRadius:6})),
+    {type:'line', label:'손익분기 연매출', data:sn.labels.map(()=>sn.be), borderColor:'#B91C1C', borderDash:[6,4], pointRadius:0, borderWidth:2}]},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${fmt(c.parsed.y,2)}억원`}}}, scales:{y:{beginAtZero:true,title:{display:true,text:'억원'}}}}});
+  new Chart(document.getElementById('cOpm'), {type:'bar', data:{labels:sn.labels, datasets:sn.names.map(n=>({label:n, data:sn.opm[n], backgroundColor:scol[n], borderRadius:6}))},
+    options:{plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${fmt(c.parsed.y)}%`}}}, scales:{y:{title:{display:true,text:'영업이익률(%)'}, grid:{color:c=>c.tick.value===0?'#6B6880':v('--line')}}}}});
+
+  const dt = D.dart, dcol=['#2E1065','#6D28D9','#A78BFA','#0E7490','#67C5D6','#CBD5E1','#15803D'];
+  new Chart(document.getElementById('cDart'), {type:'bar', data:{labels:dt.labels, datasets:dt.cats.map((k,i)=>({label:k, data:dt.values[k], backgroundColor:dcol[i%dcol.length]}))},
+    options:{indexAxis:'y', plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label} ${fmt(c.parsed.x)}%`}}},
+      scales:{x:{stacked:true, max:100, title:{display:true,text:'매출 대비 %'}}, y:{stacked:true}}}});
+})();
+</script>
+</body>
+</html>
